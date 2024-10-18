@@ -63,40 +63,36 @@ export default function Navbar() {
     Service
   </NavLink>
   <div className="dropdown-menu fade-down m-0">
-    <NavLink to="/trademark-registration" className="dropdown-item" activeClassName="active">
+    <NavLink to="/Trademark-registration" className="dropdown-item" activeClassName="active">
       Trademark Registration
     </NavLink>
-    <NavLink to="/comprehensive-trademark-research" className="dropdown-item" activeClassName="active">
+    <NavLink to="/Comprehensive-Trademark-Research" className="dropdown-item" activeClassName="active">
       Comprehensive Trademark Research
     </NavLink>
-    <NavLink to="/free-trademark-search" className="dropdown-item" activeClassName="active">
-      Free Trademark Search
-    </NavLink>
-    <NavLink to="/statement-of-use" className="dropdown-item" activeClassName="active">
+   
+    <NavLink to="/Statementofuse" className="dropdown-item" activeClassName="active">
       Statement of Use
     </NavLink>
-    <NavLink to="/trademark-monitoring" className="dropdown-item" activeClassName="active">
+    <NavLink to="/Trademarkmonitoring" className="dropdown-item" activeClassName="active">
       Trademark Monitoring
     </NavLink>
-    <NavLink to="/office-action-response" className="dropdown-item" activeClassName="active">
+    <NavLink to="/OfficeActionResponse" className="dropdown-item" activeClassName="active">
       Office Action Response
     </NavLink>
-    <NavLink to="/filing-renewal" className="dropdown-item" activeClassName="active">
+    <NavLink to="/FillingRenewal" className="dropdown-item" activeClassName="active">
       Filing a Renewal
     </NavLink>
-    <NavLink to="/request-extension" className="dropdown-item" activeClassName="active">
-      Request for Extension
-    </NavLink>
-    <NavLink to="/revival-for-abandonment" className="dropdown-item" activeClassName="active">
+  
+    <NavLink to="/RevivalAbandonment" className="dropdown-item" activeClassName="active">
       Revival for Abandonment
     </NavLink>
-    <NavLink to="/logo-design-service" className="dropdown-item" activeClassName="active">
+    <NavLink to="/LogoDesignService" className="dropdown-item" activeClassName="active">
       Logo Design Service
     </NavLink>
   </div>
 </div>
             <NavLink
-              to="/courses"
+              to="/FAQ1"
               className="nav-item nav-link"
               activeClassName="active"
             >
@@ -137,7 +133,7 @@ export default function Navbar() {
           ) : (
             <button
               className="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
-              onClick={() => loginWithRedirect()}
+            
             >
              Secure my Trademark<i className="fa fa-arrow-right ms-3"></i>
             </button>

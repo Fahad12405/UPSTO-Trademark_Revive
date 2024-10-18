@@ -12,7 +12,7 @@ export default function Service() {
     <div className="row g-4">
       <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
         <div className="service-item text-center pt-3">
-          <Link to="/trademark-registration">
+          <Link to="/Trademark-registration">
             <div className="p-4">
               <i className="fa fa-3x fa-registered text-primary mb-4" />
               <h5 className="mb-3">Trademark Registration</h5>
@@ -23,7 +23,7 @@ export default function Service() {
       </div>
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
               <div className="service-item text-center pt-3">
-                <Link to="/comprehensive-research">
+                <Link to="/Comprehensive-Trademark-Research">
                   <div className="p-4">
                     <i className="fa fa-3x fa-search text-primary mb-4" />
                     <h5 className="mb-3">Comprehensive Trademark Research</h5>
@@ -32,17 +32,7 @@ export default function Service() {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div className="service-item text-center pt-3">
-                <Link to="/free-trademark-search">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-search-plus text-primary mb-4" />
-                    <h5 className="mb-3">Free Trademark Search</h5>
-                    <p>Use our free search tool to check for available trademarks in a few clicks.</p>
-                  </div>
-                </Link>
-              </div>
-            </div>
+           
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
               <div className="service-item text-center pt-3">
                 <Link to="/statement-of-use">
@@ -87,17 +77,7 @@ export default function Service() {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1.5s">
-              <div className="service-item text-center pt-3">
-                <Link to="/request-for-extension">
-                  <div className="p-4">
-                    <i className="fa fa-3x fa-clock text-primary mb-4" />
-                    <h5 className="mb-3">Request for Extension</h5>
-                    <p>File for extensions on trademark deadlines to ensure your application stays on track.</p>
-                  </div>
-                </Link>
-              </div>
-            </div>
+           
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1.7s">
               <div className="service-item text-center pt-3">
                 <Link to="/revival-abandonment">
