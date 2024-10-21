@@ -6,20 +6,23 @@ import Service from '../Service';
 import Header from '../Header';
 import Category from '../Category';
 import MidBanner from '../MidBanner';
+import Spinner from '../Spinner';
+
 
 
 
 const ComprehensiveTrademarkResearch = () => {
   return (
     <div>
+      <Spinner />
       <Navbar />
       <Header name="Comprehensive Trademark Research"/>
       <Service />
       <Category />
       <MidBanner />
       <Contact />
-     
-      <Footer />
+     <Footer />
+     <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
     </div>
   );
 };

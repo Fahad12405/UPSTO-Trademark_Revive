@@ -6,6 +6,7 @@ import Service from '../Service';
 import Header from '../Header';
 import Category from '../Category';
 import MidBanner from '../MidBanner';
+import Spinner from '../Spinner';
 
 
 
@@ -13,6 +14,7 @@ import MidBanner from '../MidBanner';
 const RevivalAbandonment = () => {
   return (
     <div>
+      <Spinner />
       <Navbar />
       <Header name="Revival for Abandonment"/>
       <Service />
@@ -20,6 +22,7 @@ const RevivalAbandonment = () => {
      <Category />
      <MidBanner />
       <Footer />
+      <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
     </div>
   );
 };

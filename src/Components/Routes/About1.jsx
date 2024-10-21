@@ -25,6 +25,7 @@ export default function About1() {
     <Testimonial/>
     <Contact/>
     <Footer/>
+    <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
     </>
   )
 }

@@ -19,6 +19,7 @@ export default function() {
     <Service/>
     <MidBanner />
     <Footer/>
+    <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
     </>
   )
 }

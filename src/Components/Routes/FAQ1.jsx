@@ -7,11 +7,14 @@ import Category from '../Pages/Category';
 import Testimonial from '../Pages/Testimonial';
 import Contact from '../Pages/Contact';
 import FAQ from '../Pages/FAQ'; 
+import Spinner from '../Pages/Spinner'; 
+
+
 
 export default function FAQ1() {
   return (
     <>
-      
+      <Spinner />
       <Navbar />
       <Header name="FAQ" />
       <FAQ />
@@ -20,7 +23,7 @@ export default function FAQ1() {
       <Testimonial />
       <Contact />
       <Footer /> 
-      
+      <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
     </>
   );
 }
