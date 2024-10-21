@@ -18,14 +18,15 @@ const FillingRenewal = () => {
     });
   };
 
-  // Show/hide the scroll button based on scroll position
   const handleScroll = () => {
-    if (window.scrollY > 300) { // Adjust the threshold as necessary
+    console.log('Scroll position:', window.scrollY); // Add this line
+    if (window.scrollY > 300) {
       setShowScrollButton(true);
     } else {
       setShowScrollButton(false);
     }
   };
+  
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
