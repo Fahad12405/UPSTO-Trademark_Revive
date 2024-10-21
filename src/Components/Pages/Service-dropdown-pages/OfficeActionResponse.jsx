@@ -5,6 +5,8 @@ import Contact from '../Contact';
 import Service from '../Service';
 import Header from '../Header';
 import Category from '../Category';
+import MidBanner from '../MidBanner';
+
 
 
 const OfficeActionResponse = () => {
@@ -14,7 +16,7 @@ const OfficeActionResponse = () => {
       <Header name="Office Action Response"/>
       <Service />
       <Category />
-
+      <MidBanner />
       <Contact />
      
       <Footer />

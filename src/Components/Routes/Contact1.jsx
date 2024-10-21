@@ -5,6 +5,8 @@ import Footer from '../Pages/Footer'
 import Contact from '../Pages/Contact'
 import Spinner from '../Pages/Spinner'
 import Service from '../Pages/Service'
+import MidBanner from '../Pages/MidBanner'
+
 
 
 export default function() {
@@ -15,6 +17,7 @@ export default function() {
     <Header name="Contact"/>
     <Contact/>
     <Service/>
+    <MidBanner />
     <Footer/>
     </>
   )

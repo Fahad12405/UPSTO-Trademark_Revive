@@ -32,7 +32,7 @@ export default function Slide() {
                           Protect Your Brand Today. Already know your Trademark is available?
                         </p>
                         <Link
-                          to=""
+                          to="/about"
                           className="btn btn-primary py-md-3 px-md-3 me-4 animated slideInLeft z-5"
                         >
                           Read More
@@ -41,7 +41,7 @@ export default function Slide() {
                           to="/courses"
                           className="btn btn-primary py-md-3 px-md-4 animated slideInRight"
                         >
-                          Register Now
+                         Start Register Now
                         </Link>
                       </div>
                     </div>

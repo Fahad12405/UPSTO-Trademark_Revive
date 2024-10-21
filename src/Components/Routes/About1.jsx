@@ -8,6 +8,8 @@ import Contact from '../Pages/Contact'
 import Testimonial from '../Pages/Testimonial'
 import Spinner from '../Pages/Spinner'
 import Category from '../Pages/Category'
+import MidBanner from '../Pages/MidBanner'
+
 
 
 export default function About1() {
@@ -19,7 +21,7 @@ export default function About1() {
     <About/>
     <Service/>
     <Category/>
-   
+    <MidBanner />
     <Testimonial/>
     <Contact/>
     <Footer/>

@@ -26,6 +26,11 @@ export default function Header({ name }) {
                   </li>
                 </ol>
               </nav>
+
+              {/* Button added here */}
+              <button className="btn btn-light mt-3">
+                Start Register Now
+              </button>
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ import OfficeActionResponse from "./Components/Pages/Service-dropdown-pages/Offi
 import FillingRenewal from "./Components/Pages/Service-dropdown-pages/FillingRenewal";
 import RevivalAbandonment from "./Components/Pages/Service-dropdown-pages/RevivalAbandonment";
 import LogoDesignService from "./Components/Pages/Service-dropdown-pages/LogoDesignService";
+import MidBanner from "./Components/Pages/MidBanner";
 
 
 import About1 from "./Components/Routes/About1";
@@ -45,8 +46,9 @@ function App() {
           <Route path="/FillingRenewal" element={<FillingRenewal />} />
           <Route path="/RevivalAbandonment" element={<RevivalAbandonment />} />
           <Route path="/LogoDesignService" element={<LogoDesignService />} />
+          <Route path="/MidBanner" element={<MidBanner />} />
          
-          
+          x
 
          
 

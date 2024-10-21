@@ -5,6 +5,8 @@ import Contact from '../Contact';
 import Service from '../Service';
 import Header from '../Header';
 import Category from '../Category';
+import MidBanner from '../MidBanner';
+
 
 
 const ComprehensiveTrademarkResearch = () => {
@@ -14,6 +16,7 @@ const ComprehensiveTrademarkResearch = () => {
       <Header name="Comprehensive Trademark Research"/>
       <Service />
       <Category />
+      <MidBanner />
       <Contact />
      
       <Footer />

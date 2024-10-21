@@ -5,6 +5,8 @@ import Contact from '../Contact';
 import Service from '../Service';
 import Header from '../Header';
 import Category from '../Category';
+import MidBanner from '../MidBanner';
+
 
 
 const FillingRenewal = () => {
@@ -14,6 +16,7 @@ const FillingRenewal = () => {
       <Header name="Filling a Renewal"/>
       <Service />
       <Category />
+      <MidBanner />
       <Contact />
   
      

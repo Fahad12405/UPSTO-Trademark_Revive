@@ -5,6 +5,8 @@ import Contact from '../Contact';
 import Service from '../Service';
 import Header from '../Header';
 import Category from '../Category';
+import MidBanner from '../MidBanner';
+
 
 
 
@@ -15,6 +17,7 @@ const Statementofuse = () => {
       <Header name="Statement of Use"/>
       <Service />
       <Category />
+      <MidBanner />
       <Contact />
      
       <Footer />

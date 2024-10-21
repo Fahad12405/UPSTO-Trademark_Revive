@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../Pages/Navbar';
 import Header from '../Pages/Header';
 import Footer from '../Pages/Footer';
-
+import MidBanner from '../Pages/MidBanner'
 import Category from '../Pages/Category';
 import Testimonial from '../Pages/Testimonial';
 import Contact from '../Pages/Contact';
@@ -16,6 +16,7 @@ export default function FAQ1() {
       <Header name="FAQ" />
       <FAQ />
       <Category/>
+      <MidBanner />
       <Testimonial />
       <Contact />
       <Footer /> 
