@@ -11,6 +11,7 @@ import FillingRenewal from "./Components/Pages/Service-dropdown-pages/FillingRen
 import RevivalAbandonment from "./Components/Pages/Service-dropdown-pages/RevivalAbandonment";
 import LogoDesignService from "./Components/Pages/Service-dropdown-pages/LogoDesignService";
 import MidBanner from "./Components/Pages/MidBanner";
+import Scroll from "./Components/Pages/Scroll";
 
 
 import About1 from "./Components/Routes/About1";
@@ -47,8 +48,8 @@ function App() {
           <Route path="/RevivalAbandonment" element={<RevivalAbandonment />} />
           <Route path="/LogoDesignService" element={<LogoDesignService />} />
           <Route path="/MidBanner" element={<MidBanner />} />
-         
-          x
+         <Route path="/Scroll" element={<Scroll />} />
+        
 
          
 

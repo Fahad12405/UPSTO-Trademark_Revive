@@ -10,7 +10,8 @@ import Spinner from '../Spinner';
 import { Button, Typography, List, ListItem, Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton } from '@mui/material';
 import { blue } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Scroll from '../Scroll';
+
 
 const TrademarkRegistration = () => {
   const [expanded, setExpanded] = React.useState(false);
@@ -112,8 +113,8 @@ const TrademarkRegistration = () => {
       <MidBanner />
       <Contact />
       <Footer />
-      <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
-    </div>
+      <Scroll />
+      </div>
   );
 };
 

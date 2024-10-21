@@ -6,6 +6,11 @@ import Contact from '../Pages/Contact'
 import Spinner from '../Pages/Spinner'
 import Service from '../Pages/Service'
 import MidBanner from '../Pages/MidBanner'
+import Scroll from '../Pages/Scroll';
+
+
+
+
 
 
 
@@ -19,7 +24,7 @@ export default function() {
     <Service/>
     <MidBanner />
     <Footer/>
-    <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
+    <Scroll />
     </>
   )
 }

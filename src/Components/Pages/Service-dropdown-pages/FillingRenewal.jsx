@@ -7,6 +7,8 @@ import Header from '../Header';
 import Category from '../Category';
 import MidBanner from '../MidBanner';
 import Spinner from '../Spinner';
+import Scroll from '../Scroll';
+
 
 const FillingRenewal = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -43,18 +45,8 @@ const FillingRenewal = () => {
       <MidBanner />
       <Contact />
       <Footer />
-      {showScrollButton && (
-        <a 
-          href="#"
-          className="btn btn-primary back-to-top"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
-        >
-          <i className="bi bi-arrow-up"></i>
-        </a>
-      )}
+      <Scroll />
+
     </div>
   );
 };

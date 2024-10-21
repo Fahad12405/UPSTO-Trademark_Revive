@@ -8,6 +8,8 @@ import Testimonial from '../Pages/Testimonial';
 import Contact from '../Pages/Contact';
 import FAQ from '../Pages/FAQ'; 
 import Spinner from '../Pages/Spinner'; 
+import Scroll from '../Pages/Scroll';
+
 
 
 
@@ -23,7 +25,7 @@ export default function FAQ1() {
       <Testimonial />
       <Contact />
       <Footer /> 
-      <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
+      <Scroll />
     </>
   );
 }

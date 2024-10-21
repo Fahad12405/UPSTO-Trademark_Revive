@@ -9,6 +9,8 @@ import Testimonial from '../Pages/Testimonial'
 import Spinner from '../Pages/Spinner'
 import Category from '../Pages/Category'
 import MidBanner from '../Pages/MidBanner'
+import Scroll from '../Pages/Scroll'
+
 
 
 
@@ -25,7 +27,7 @@ export default function About1() {
     <Testimonial/>
     <Contact/>
     <Footer/>
-    <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
+    <Scroll />
     </>
   )
 }

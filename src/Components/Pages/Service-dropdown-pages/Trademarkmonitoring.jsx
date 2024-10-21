@@ -7,6 +7,8 @@ import Header from '../Header';
 import Category from '../Category';
 import MidBanner from '../MidBanner';
 import Spinner from '../Spinner';
+import Scroll from '../Scroll';
+
 
 
 
@@ -21,9 +23,9 @@ const Trademarkmonitoring = () => {
       <Category />
       <MidBanner />
       <Contact />
-     
       <Footer />
-      <a href="#" className="btn btn-primary back-to-top"><i className="bi bi-arrow-up"></i></a>
+      <Scroll />
+
     </div>
   );
 };
