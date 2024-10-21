@@ -216,44 +216,59 @@
 }
 
 
-/*** Section Title ***/
 .section-title {
     position: relative;
     display: inline-block;
     text-transform: uppercase;
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make title bold */
+    color: var(--primary); /* Change text color */
+    padding: 10px 0; /* Add padding for spacing */
 }
 
-.section-title::before {
-    position: absolute;
-    content: "";
-    width: calc(100% + 80px);
-    height: 2px;
-    top: 4px;
-    left: -40px;
-    background: var(--primary);
-    z-index: -1;
-}
-
+.section-title::before,
 .section-title::after {
     position: absolute;
     content: "";
-    width: calc(100% + 120px);
     height: 2px;
-    bottom: 5px;
-    left: -60px;
     background: var(--primary);
     z-index: -1;
+    transition: all 0.3s ease; /* Add transition for hover effect */
 }
 
-.section-title.text-start::before {
-    width: calc(100% + 40px);
-    left: 0;
+.section-title::before {
+    width: 100%;
+    top: 50%; /* Center it vertically */
+    left: 0; /* Align to the left */
 }
 
-.section-title.text-start::after {
-    width: calc(100% + 60px);
-    left: 0;
+.section-title::after {
+    width: 100%;
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
 }
+
+/* Hover effect for better interaction */
+.section-title:hover::before,
+.section-title:hover::after {
+    transform: scaleX(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.25rem; /* Decrease font size on smaller screens */
+        padding: 8px 0; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1rem; /* Further decrease font size on mobile */
+        padding: 6px 0; /* Adjust padding for mobile */
+    }
+}
+
 
 
 /*** Service ***/
