@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export default function () {
     return (
         <>
-        <Navbar/>
+        
         <Header name="404 page"/>
             <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div className="container text-center">
@@ -22,7 +22,6 @@ export default function () {
             </div>
         </div>
     </div>
-    <Footer/>
         </>
     )
 }

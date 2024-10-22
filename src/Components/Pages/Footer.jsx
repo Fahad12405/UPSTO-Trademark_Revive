@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
             <div className="col-lg-3 col-md-6">
               <h4 className="text-white mb-3">Quick Link</h4>
               <a className="btn btn-link" href>
-              Home
+                Home
               </a>
               <a className="btn btn-link" href>
                 About Us
@@ -21,15 +22,15 @@ export default function Footer() {
                 FAQ
               </a>
               <a className="btn btn-link" href>
-               Contact
+                Contact
               </a>
-             
+
             </div>
             <div className="col-lg-3 col-md-6">
               <h4 className="text-white mb-3">Contact</h4>
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt me-3" />
-               USA , FLorida, Miami
+                USA , FLorida, Miami
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-3" />
@@ -37,9 +38,9 @@ export default function Footer() {
               </p>
               <p className="mb-2">
                 <i className="fa fa-envelope me-3" />
-               trademark0@gmail.com
+                trademarkrevive@gmail.com
               </p>
-            
+
             </div>
             <div className="col-lg-3 col-md-6">
               <h4 className="text-white mb-3">Gallery</h4>
@@ -89,10 +90,10 @@ export default function Footer() {
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-            <h4 className="text-white mb-3">Stay Updated!</h4>
-<p>
-  Subscribe to our newsletter to receive the latest news, updates, and tips on trademark registration and protection. 
-</p>
+              <h4 className="text-white mb-3">Stay Updated!</h4>
+              <p>
+                Subscribe to our newsletter to receive the latest news, updates, and tips on trademark registration and protection.
+              </p>
 
               <div
                 className="position-relative mx-auto"
@@ -119,26 +120,21 @@ export default function Footer() {
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 ©{" "}
                 <a className="border-bottom" href>
-                  Trademark
+                  TRADEMARK REVIVE  &nbsp;
                 </a>
-                , All Right Reserved. Designed By{" "}
-                <a
-                  className="border-bottom"
-                  href="#"
-                  target="_blank"
-                >
-                  Trademark Registration Website
-                </a>
+                All Right Reserved.
+
                 <br />
                 <br />
               </div>
               <div className="col-md-6 text-center text-md-end">
                 <div className="footer-menu">
-                  <a href>Home</a>
-                  <a href>Cookies</a>
-                  <a href>Help</a>
-                  <a href>FQAs</a>
+                  <Link to="/Home">Home</Link>
+                  <Link to="/About1">About</Link>
+                  <Link to="/FAQ1">FAQ</Link>
+                  <Link to="/contact">Contact</Link>
                 </div>
+
               </div>
             </div>
           </div>

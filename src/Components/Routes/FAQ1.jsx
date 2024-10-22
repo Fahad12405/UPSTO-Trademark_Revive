@@ -17,14 +17,14 @@ export default function FAQ1() {
   return (
     <>
       <Spinner />
-      <Navbar />
+      
       <Header name="FAQ" />
       <FAQ />
       <Category/>
       <MidBanner />
       <Testimonial />
       <Contact />
-      <Footer /> 
+     
       <Scroll />
     </>
   );

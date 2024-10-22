@@ -35,7 +35,7 @@ export default function Service() {
            
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
               <div className="service-item text-center pt-3">
-                <Link to="/statement-of-use">
+                <Link to="/Statementofuse">
                   <div className="p-4">
                     <i className="fa fa-3x fa-file-alt text-primary mb-4" />
                     <h5 className="mb-3">Statement of Use</h5>
@@ -46,7 +46,7 @@ export default function Service() {
             </div>
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
               <div className="service-item text-center pt-3">
-                <Link to="/trademark-monitoring">
+                <Link to="/Trademarkmonitoring">
                   <div className="p-4">
                     <i className="fa fa-3x fa-eye text-primary mb-4" />
                     <h5 className="mb-3">Trademark Monitoring</h5>
@@ -57,7 +57,7 @@ export default function Service() {
             </div>
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1.1s">
               <div className="service-item text-center pt-3">
-                <Link to="/office-action-response">
+                <Link to="/OfficeActionResponse">
                   <div className="p-4">
                     <i className="fa fa-3x fa-envelope-open-text text-primary mb-4" />
                     <h5 className="mb-3">Office Action Response</h5>
@@ -68,7 +68,7 @@ export default function Service() {
             </div>
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1.3s">
               <div className="service-item text-center pt-3">
-                <Link to="/renewal-filing">
+                <Link to="/FillingRenewal">
                   <div className="p-4">
                     <i className="fa fa-3x fa-redo text-primary mb-4" />
                     <h5 className="mb-3">Filing a Renewal</h5>
@@ -80,7 +80,7 @@ export default function Service() {
            
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1.7s">
               <div className="service-item text-center pt-3">
-                <Link to="/revival-abandonment">
+                <Link to="/RevivalAbandonment">
                   <div className="p-4">
                     <i className="fa fa-3x fa-undo text-primary mb-4" />
                     <h5 className="mb-3">Revival for Abandonment</h5>
@@ -91,7 +91,7 @@ export default function Service() {
             </div>
             <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1.9s">
               <div className="service-item text-center pt-3">
-                <Link to="/logo-design-service">
+                <Link to="/LogoDesignService">
                   <div className="p-4">
                     <i className="fa fa-3x fa-paint-brush text-primary mb-4" />
                     <h5 className="mb-3">Logo Design Service</h5>

@@ -18,7 +18,7 @@ export default function About1() {
   return (
     <>
     <Spinner/>
-    <Navbar/>
+    
     <Header name="About"/>
     <About/>
     <Service/>
@@ -26,7 +26,6 @@ export default function About1() {
     <MidBanner />
     <Testimonial/>
     <Contact/>
-    <Footer/>
     <Scroll />
     </>
   )

@@ -18,7 +18,7 @@ const Statementofuse = () => {
   return (
     <div>
       <Spinner />
-      <Navbar />
+
       <Header name="Statement of Use"/>
       <DropdownServiceCards 
            title="Statement of Use Filing" 
@@ -38,7 +38,6 @@ const Statementofuse = () => {
       <MidBanner />
       <Contact />
      
-      <Footer />
       <Scroll />
       </div>
   );

@@ -16,7 +16,7 @@ const ComprehensiveTrademarkResearch = () => {
   return (
     <div>
       <Spinner />
-      <Navbar />
+      
       <Header name="Comprehensive Trademark Research" />
 
       {/* Comprehensive Trademark Search Section */}
@@ -105,7 +105,7 @@ const ComprehensiveTrademarkResearch = () => {
       <Category />
       <MidBanner />
       <Contact />
-      <Footer />
+      
       <Scroll />
     </div>
   );

@@ -18,12 +18,12 @@ export default function() {
   return (
     <>
     <Spinner/>
-    <Navbar/>
+    
     <Header name="Contact"/>
     <Contact/>
     <Service/>
     <MidBanner />
-    <Footer/>
+   
     <Scroll />
     </>
   )

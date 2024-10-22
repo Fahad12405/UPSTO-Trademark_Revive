@@ -16,7 +16,7 @@ export default function Home() {
     return (
         <>
             <Spinner/>
-            <Navbar/>
+            
             <Slide/>
             <Service/>
             <About/>
@@ -29,7 +29,7 @@ export default function Home() {
             
             <Testimonial/>
             <Contact/>
-            <Footer/>  
+            
            <Scroll />
         </>
     )

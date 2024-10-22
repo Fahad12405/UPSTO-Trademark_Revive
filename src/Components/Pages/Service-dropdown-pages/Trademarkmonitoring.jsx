@@ -79,7 +79,7 @@ const Trademarkmonitoring = () => {
   return (
     <div style={styles.bodyReset}>
       <Spinner />
-      <Navbar />
+      
       <Header name="Trademark Monitoring" />
 
       <div style={styles.container}>
@@ -130,7 +130,7 @@ const Trademarkmonitoring = () => {
       <Category />
       <MidBanner />
       <Contact />
-      <Footer />
+      
       <Scroll />
     </div>
   );

@@ -21,10 +21,12 @@ import Testimonial1 from "./Components/Routes/Testimonial1";
 import Contact1 from "./Components/Routes/Contact1";
 import ErrorPage from "./Components/Pages/ErrorPage";
 
-import BotpressChatbot from "./Components/Ebook/BotpressChatbot";
+// import BotpressChatbot from "./Components/Ebook/BotpressChatbot";
 
 
 import { useAuth0 } from "@auth0/auth0-react";
+import Footer from "./Components/Pages/Footer";
+import Navbar from "./Components/Pages/Navbar";
 
 
 function App() {
@@ -32,13 +34,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About1 />} />
         
+
           <Route path="/FAQ1" element={<FAQ1 />} />
           <Route path="/testimonial" element={<Testimonial1 />} />
           <Route path="/contact" element={<Contact1 />} />
+          <Route path="/About1" element={<About1 />} />
+
           <Route path="/error" element={<ErrorPage />} />
           <Route path="/Trademark-registration" element={<TrademarkRegistration />} />
           <Route path="/Comprehensive-Trademark-Research" element={<ComprehensiveTrademarkResearch />} />
@@ -52,13 +58,14 @@ function App() {
          <Route path="/Scroll" element={<Scroll />} />
          <Route path="/DropdownServiceCards" element={<DropdownServiceCards />} />
         
-
+          
          
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <BotpressChatbot />
+      {/* <BotpressChatbot /> */}
     </>
   );
 }

@@ -82,7 +82,7 @@ const FillingRenewal = () => {
   return (
     <div style={styles.bodyReset}>
     <Spinner />
-    <Navbar />
+    
     <Header name="Filing a Renewal" />
   
     <div style={styles.container}>
@@ -133,7 +133,7 @@ const FillingRenewal = () => {
     <Category />
     <MidBanner />
     <Contact />
-    <Footer />
+   
     <Scroll />
   </div>
   

@@ -15,7 +15,7 @@ const TrademarkRegistration = () => {
   return (
     <div>
       <Spinner />
-      <Navbar />
+    
       <Header name="Trademark Registration" />
 
       {/* Use the DropdownServiceCards component with props */}
@@ -30,7 +30,7 @@ const TrademarkRegistration = () => {
       <Category />
       <MidBanner />
       <Contact />
-      <Footer />
+      
       <Scroll />
     </div>
   );

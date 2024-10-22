@@ -17,7 +17,6 @@ const OfficeActionResponse = () => {
   return (
     <div>
       <Spinner />
-      <Navbar />
       <Header name="Office Action Response"/>
       <DropdownServiceCards 
   title="Office Action Response" 
@@ -37,7 +36,6 @@ const OfficeActionResponse = () => {
       <MidBanner />
       <Contact />
      
-      <Footer />
       <Scroll />
       </div>
   );

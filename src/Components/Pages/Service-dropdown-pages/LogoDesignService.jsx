@@ -50,7 +50,7 @@ const renderCard = (image, title, description, price) => (
 return (
   <div>
     <Spinner />
-    <Navbar />
+    
     <Header name="Logo Design Service" />
   {/* Cards section */}
 <Container sx={{ py: 4 }}> {/* Optional Container for spacing */}
@@ -87,7 +87,6 @@ return (
       <Category />
       <MidBanner />
       <Contact />
-      <Footer />
       <Scroll />
     </div>
   );

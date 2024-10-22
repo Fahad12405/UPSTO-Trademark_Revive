@@ -52,7 +52,6 @@ const RevivalAbandonment = () => {
   return (
     <div>
       <Spinner />
-      <Navbar />
       <Header name="Revival for Abandonment" />
 
       {/* Cards section */}
@@ -89,7 +88,6 @@ const RevivalAbandonment = () => {
       <Contact />
       <Category />
       <MidBanner />
-      <Footer />
       <Scroll />
     </div>
   );
