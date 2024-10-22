@@ -63,7 +63,7 @@ const DropdownServiceCards = ({ title, description, price, image }) => {
           />
           <CardContent sx={{ padding: '10px' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: '5px' }}>
-              {price} + USPTO gov fees
+              {price} 
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: '5px' }}>
               {description} {/* Use props for description */}

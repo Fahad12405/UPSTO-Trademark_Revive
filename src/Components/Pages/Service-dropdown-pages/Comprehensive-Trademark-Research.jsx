@@ -96,7 +96,7 @@ const ComprehensiveTrademarkResearch = () => {
             Our expert team provides detailed reports to guide your trademark application process.
           </>
         } 
-        price="$149.00" // Adjusted price for the comprehensive search
+        price="$149.00 per trademark" // Adjusted price for the comprehensive search
         image="/img/cat-3.jpg" // Ensure this path is correct
       />
 

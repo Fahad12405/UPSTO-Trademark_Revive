@@ -29,7 +29,7 @@ const Statementofuse = () => {
               Let our team assist you in navigating the process for a successful submission.
       </>
   } 
-            price="$99.00" 
+            price="$99.00 + $100 USPTO filing fee" 
             image="/img/cat-2.jpg" // Ensure this path is correct
       />
 

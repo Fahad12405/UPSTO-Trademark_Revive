@@ -12,6 +12,7 @@ import RevivalAbandonment from "./Components/Pages/Service-dropdown-pages/Reviva
 import LogoDesignService from "./Components/Pages/Service-dropdown-pages/LogoDesignService";
 import MidBanner from "./Components/Pages/MidBanner";
 import Scroll from "./Components/Pages/Scroll";
+import DropdownServiceCards from "./Components/Pages/DropdownServiceCards";
 
 
 import About1 from "./Components/Routes/About1";
@@ -49,6 +50,7 @@ function App() {
           <Route path="/LogoDesignService" element={<LogoDesignService />} />
           <Route path="/MidBanner" element={<MidBanner />} />
          <Route path="/Scroll" element={<Scroll />} />
+         <Route path="/DropdownServiceCards" element={<DropdownServiceCards />} />
         
 
          

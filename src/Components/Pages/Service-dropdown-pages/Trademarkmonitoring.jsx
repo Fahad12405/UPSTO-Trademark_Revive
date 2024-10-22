@@ -95,7 +95,7 @@ const Trademarkmonitoring = () => {
                   Stay proactive and safeguard your brand's integrity with our comprehensive monitoring service.
                 </>
               } 
-              price="$149.00" 
+              price="$149.00 quarterly" 
               image="/img/cat-1.jpg" 
               imageStyle={{ height: '100%', objectFit: 'cover' }} 
             />
