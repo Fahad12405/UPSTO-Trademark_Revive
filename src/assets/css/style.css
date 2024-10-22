@@ -451,3 +451,22 @@
     padding-right: 0;
     border-right: none;
 }
+
+
+
+
+/* navbar logo css */
+/* Default styles for larger screens */
+.logo {
+    height: 50px;
+    width: 220px;
+    object-fit: cover;
+  }
+  
+  /* Media query for mobile screens */
+  @media (max-width: 768px) {
+    .logo {
+      width: 100px;
+    }
+  }
+  

@@ -14,19 +14,14 @@ export default function Navbar() {
   to="/"
   className="navbar-brand d-flex align-items-center px-4 px-lg-5"
 >
-  {/* Replace the text with an image logo */}
   <img
     src="/img/trademarklogo.png"
     alt="Trademark Logo"
-    className="logo img-fluid"
-    style={{
-      height: '60px', // Increased size
-      width: '30vh', // Set width equal to height for a perfect circle
-      borderRadius: '100%', // Make it circular
-      objectFit: 'cover', // Ensures the image fits within the circle
-    }}
+    className="logo img-fluid" // Use the class for styling
   />
 </Link>
+
+
 
         <button
           type="button"
