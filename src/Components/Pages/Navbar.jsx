@@ -16,12 +16,12 @@ export default function Navbar() {
 >
   {/* Replace the text with an image logo */}
   <img
-    src="/img/trademarklogo.jpg"
+    src="/img/trademarklogo.png"
     alt="Trademark Logo"
     className="logo img-fluid"
     style={{
       height: '60px', // Increased size
-      width: '60px', // Set width equal to height for a perfect circle
+      width: '30vh', // Set width equal to height for a perfect circle
       borderRadius: '100%', // Make it circular
       objectFit: 'cover', // Ensures the image fits within the circle
     }}
