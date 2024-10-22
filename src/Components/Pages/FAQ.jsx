@@ -85,21 +85,21 @@ const basicQuestionsFaqData = [
 
 
 return (
-  <div className="container-xxl py-5" style={{ backgroundColor: "#f9f9f9", padding: "50px 0" }}>
+  <div className="container-xxl py-5" style={{ backgroundColor: "#f9f9f9", marginTop: "70px " }}>
     <div className="container">
       {/* FAQ Header */}
       <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-        <h6 className="section-title bg-white text-center text-primary px-3" style={{ fontFamily: "Arial, sans-serif", fontWeight: "bold", padding: "10px 20px", borderRadius: "5px", display: "inline-block" }}>
+        <h6 className="section-title bg-white text-center text-primary px-3" style={{ fontFamily: "Arial, sans-serif", fontWeight: "bold", padding: "10px 10px",margin: "30px", borderRadius: "5px", display: "inline-block" }}>
           Frequently Asked Questions
         </h6>
-        <h1 className="mb-5" style={{ fontFamily: "Arial, sans-serif", fontSize: "36px", margin: "30px 0" }}>FAQs</h1>
+        <h1 className="mb-5" style={{ fontFamily: "Arial, sans-serif", fontSize: "36px", margin: "10px 0" }}>FAQs</h1>
       </div>
 
       {/* Disclaimer (Always Visible) */}
       <div className="disclaimer-section" style={{ marginBottom: "20px" }}>
         <h3 style={{ fontSize: "24px", fontWeight: "bold", fontFamily: "Arial, sans-serif" }}>Disclaimer</h3>
-        <p style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.6", paddingTop: "10px" }}>
-          Trademark Genius does not operate as a law firm. No information on our website is to be used as legal advice...
+        <p style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.9", paddingTop: "30px" }}>
+        The information provided in the Frequently Asked Questions (FAQ) section of this website is for general informational purposes only. While we strive to ensure that the content is accurate and up-to-date, we do not provide legal advice or act as a law firm. Trademark laws are complex, and registration requirements may vary depending on your specific situation
         </p>
       </div>
 

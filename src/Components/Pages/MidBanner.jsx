@@ -7,7 +7,7 @@ const Banner = () => {
       sx={{
         position: 'relative',
         width: '100%',
-        height: '70vh', // Height of the entire banner
+        height: '50vh', // Height of the entire banner
         backgroundImage: 'url(/img/MidBanner.webp)', // Correct path for the public folder
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -27,6 +27,7 @@ const Banner = () => {
           backgroundPosition: 'inherit',
           filter: 'blur(3px)', // Adjust the blur strength as needed
           zIndex: 1,
+         
         },
         '&::after': {
           content: '""',
