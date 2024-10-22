@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Navbar'; // Adjust the import paths as necessary
+import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Contact from '../Contact';
 import Service from '../Service';
@@ -8,6 +8,7 @@ import Category from '../Category';
 import MidBanner from '../MidBanner';
 import Spinner from '../Spinner';
 import Scroll from '../Scroll';
+import DropdownServiceCards from '../DropdownServiceCards';
 
 import { Button, Typography } from '@mui/material';
 
@@ -20,49 +21,47 @@ const ComprehensiveTrademarkResearch = () => {
 
       {/* Comprehensive Trademark Search Section */}
       <div style={{
-  position: 'relative',
-  flexWrap: 'wrap',
-  padding: '50px 20px',
-  margin: '20px 0',
-  display: 'flex', // Use flexbox for layout
-  alignItems: 'center', // Center items vertically
-  backgroundColor: '#f8f8f8', // Light gray for subtle contrast
-  borderRadius: '8px',
-  paddingLeft: '20px', // Add left padding here
-}}>
-  {/* Container for Images */}
-  <div style={{
-    display: 'flex',
-    
-    flexDirection: 'column', // Stack images vertically
-    marginRight: '100px', // Space between images and content
-    paddingLeft: '100px', // Add left padding here for the images container
-  }}>
-
+        position: 'relative',
+        flexWrap: 'wrap',
+        padding: '50px 20px',
+        margin: '20px 0',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: '#f8f8f8',
+        borderRadius: '8px',
+        paddingLeft: '20px',
+      }}>
+        {/* Container for Images */}
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          marginRight: '100px',
+          paddingLeft: '100px',
+        }}>
           {/* Circular Images */}
           {[
             "/img/search-banner-img3.jpg",
-            "/img/search-banner-img1.jpg", // Replace with actual image URLs
-            "/img/search-banner-img2.jpg", // Replace with actual image URLs
+            "/img/search-banner-img1.jpg",
+            "/img/search-banner-img2.jpg",
           ].map((src, index) => (
             <img
               key={index}
               src={src}
               alt={`Trademark Search ${index + 1}`}
               style={{
-                width: '100px', // Set a width
-                height: '100px', // Set a height
-                borderRadius: '50%', // Make it circular
-                objectFit: 'cover', // Cover the container
-                marginBottom: '50px', // Space between images
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)', // Add a shadow for depth
+                width: '100px',
+                height: '100px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                marginBottom: '50px',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
               }}
             />
           ))}
         </div>
         
         {/* Text Content */}
-        <div style={{ maxWidth: '600px', color: '#000' }}> {/* Changed text color to black */}
+        <div style={{ maxWidth: '600px', color: '#000' }}>
           <Typography variant="h4" gutterBottom>
             Thorough Comprehensive Trademark Search
           </Typography>
@@ -87,13 +86,27 @@ const ComprehensiveTrademarkResearch = () => {
         </div>
       </div>
 
+      {/* Pass props to DropdownServiceCards */}
+      <DropdownServiceCards 
+        title="Comprehensive Trademark Search" 
+        description={
+          <>
+            Conducting a comprehensive trademark search helps identify potential conflicts.<br />
+            Avoid costly legal issues and ensure your brand's uniqueness in the marketplace.<br />
+            Our expert team provides detailed reports to guide your trademark application process.
+          </>
+        } 
+        price="$149.00" // Adjusted price for the comprehensive search
+        image="/img/cat-3.jpg" // Ensure this path is correct
+      />
+
+      
       <Service />
       <Category />
       <MidBanner />
       <Contact />
       <Footer />
       <Scroll />
-
     </div>
   );
 };
