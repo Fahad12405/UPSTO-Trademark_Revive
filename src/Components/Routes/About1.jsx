@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../Pages/Header'
 import About from '../Pages/About'
 import Navbar from '../Pages/Navbar'
@@ -10,23 +10,38 @@ import Spinner from '../Pages/Spinner'
 import Category from '../Pages/Category'
 import MidBanner from '../Pages/MidBanner'
 import Scroll from '../Pages/Scroll'
+import RegistrationForm from "../Pages/RegistrationForm";
+
+
+
 
 
 
 
 export default function About1() {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
+
   return (
     <>
-    <Spinner/>
-    
-    <Header name="About"/>
-    <About/>
-    <Service/>
-    <Category/>
-    <MidBanner />
-    <Testimonial/>
-    <Contact/>
-    <Scroll />
+      {showForm && <RegistrationForm />}
+      {!showForm && <>
+
+        <Spinner />
+
+        <Header name="About" onButtonClick={handleButtonClick} />
+        <About />
+        <Service />
+        <Category />
+        <MidBanner onButtonClick={handleButtonClick} />
+        <Testimonial />
+        <Contact />
+        <Scroll />
+      </>
+      }
     </>
   )
 }

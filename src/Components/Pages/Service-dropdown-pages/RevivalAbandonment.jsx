@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import Navbar from '../Navbar'; // Adjust the import paths as necessary
 import Footer from '../Footer';
 import Contact from '../Contact';
@@ -17,9 +17,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid'; // Importing Grid from MUI
 import Container from '@mui/material/Container';
+import RegistrationForm from "../RegistrationForm";
+
 
 const RevivalAbandonment = () => {
-  
+  const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
   // Function to render each card
   const renderCard = (image, title, description, price) => (
     <Card sx={{ maxWidth: 345 }}>
@@ -51,8 +57,14 @@ const RevivalAbandonment = () => {
 
   return (
     <div>
+ {showForm && <RegistrationForm />}
+ {!showForm && <>
+
+
+
+
       <Spinner />
-      <Header name="Revival for Abandonment" />
+      <Header name="Revival for Abandonment" onButtonClick={handleButtonClick} />
 
       {/* Cards section */}
       <Container sx={{ py: 4 }}> {/* Optional Container for spacing */}
@@ -89,6 +101,8 @@ const RevivalAbandonment = () => {
       <Category />
       <MidBanner />
       <Scroll />
+      </>
+}
     </div>
   );
 };

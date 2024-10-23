@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Spinner from "./Spinner";
 
-export default function Navbar() {
+export default function Navbar({onButtonClick}) {
   const { user, isAuthenticated, isLoading, logout, loginWithRedirect } =
     useAuth0();
 
@@ -128,7 +128,7 @@ export default function Navbar() {
           ) : (
             <button
               className="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
-            
+              onClick={onButtonClick} 
             >
              Secure my Trademark<i className="fa fa-arrow-right ms-3"></i>
             </button>

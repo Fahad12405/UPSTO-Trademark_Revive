@@ -1,8 +1,10 @@
 import React from "react";
 import "../../assets/css/Slide.css"; // Ensure your CSS has rules for reduced height
 import { Link } from "react-router-dom";
+import FormButton from "./FormButton";
+import { Padding } from "@mui/icons-material";
 
-export default function Slide() {
+export default function Slide({ onButtonClick }) { // Accepting the prop
   return (
     <>
       <div
@@ -31,18 +33,18 @@ export default function Slide() {
                         <p className="fs-5 text-white mb-4 pb-2">
                           Protect Your Brand Today. Already know your Trademark is available?
                         </p>
-                        <Link
-                          to="/about"
-                          className="btn btn-primary py-md-3 px-md-3 me-4 animated slideInLeft z-5"
-                        >
-                          Read More
-                        </Link>
-                        <Link
-                          to="/courses"
-                          className="btn btn-primary py-md-3 px-md-4 animated slideInRight"
-                        >
-                         Start Register Now
-                        </Link>
+                       
+                        <FormButton
+                        to="/about"
+                          onClick={onButtonClick}
+                          name={'Read More'}
+                        sx={ {margin: '10px'} } 
+                        />
+                        <FormButton
+                          onClick={onButtonClick}
+                          sx={ {margin: '10px'} } 
+                        // cssClass={ height: 'auto', width: 'auto' } 
+                        />
                       </div>
                     </div>
                   </div>

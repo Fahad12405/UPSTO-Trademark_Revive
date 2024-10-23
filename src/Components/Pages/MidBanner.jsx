@@ -1,7 +1,10 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import FormButton from "./FormButton";
+import RegistrationForm from './RegistrationForm';
 
-const Banner = () => {
+
+const MidBanner = ({ onButtonClick }) => {
   return (
     <Box
       sx={{
@@ -53,25 +56,16 @@ const Banner = () => {
           Don't wait, Protect Your Brand now
         </Typography>
         
-        <Button
-          variant="contained"
-          sx={{
-            padding: '8px 30px',
-            fontSize: '1.2rem',
-            textTransform: 'none',
-            backgroundColor: '#06bbcc', // Sky blue color
-            color: 'white', // Change text color for better contrast
-            '&:hover': {
-              backgroundColor: '#27959f', // Hover color
-            },
-          }}
-        >
-          Start Filling
-        </Button>
-
+        
+        <FormButton
+                        // to="/"
+                        onClick={onButtonClick} 
+                          name={'Start Filing'}
+                        sx={ {margin: '10px'} } 
+                        />
       </Box>
     </Box>
   );
 };
 
-export default Banner;
+export default MidBanner;

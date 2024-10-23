@@ -13,6 +13,8 @@ import LogoDesignService from "./Components/Pages/Service-dropdown-pages/LogoDes
 import MidBanner from "./Components/Pages/MidBanner";
 import Scroll from "./Components/Pages/Scroll";
 import DropdownServiceCards from "./Components/Pages/DropdownServiceCards";
+import RegistrationForm from "./Components/Pages/RegistrationForm";
+import FormButton from "./Components/Pages/FormButton";
 
 
 import About1 from "./Components/Routes/About1";
@@ -57,6 +59,8 @@ function App() {
           <Route path="/MidBanner" element={<MidBanner />} />
          <Route path="/Scroll" element={<Scroll />} />
          <Route path="/DropdownServiceCards" element={<DropdownServiceCards />} />
+         <Route path="/RegistrationForm" element={<RegistrationForm />} />
+         <Route path="/FormButton" element={<FormButton />} />
         
           
          

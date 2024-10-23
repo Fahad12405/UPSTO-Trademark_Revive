@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import Navbar from '../Navbar'; // Adjust the import paths as necessary
 import Footer from '../Footer';
 import Contact from '../Contact';
@@ -9,17 +9,26 @@ import MidBanner from '../MidBanner';
 import Spinner from '../Spinner';
 import Scroll from '../Scroll';
 import DropdownServiceCards from '../DropdownServiceCards';
+import RegistrationForm from "../RegistrationForm";
+
 
 
 
 
 
 const Statementofuse = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
   return (
     <div>
+      {showForm && <RegistrationForm />}
+      {!showForm && <>
       <Spinner />
 
-      <Header name="Statement of Use"/>
+      <Header name="Statement of Use" onButtonClick={handleButtonClick} />
       <DropdownServiceCards 
            title="Statement of Use Filing" 
            description={
@@ -39,6 +48,8 @@ const Statementofuse = () => {
       <Contact />
      
       <Scroll />
+      </>
+      }
       </div>
   );
 };

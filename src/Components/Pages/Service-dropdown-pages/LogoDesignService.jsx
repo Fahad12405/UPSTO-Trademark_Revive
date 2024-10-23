@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import Navbar from '../Navbar'; // Adjust the import paths as necessary
 import Footer from '../Footer';
 import Contact from '../Contact';
@@ -16,10 +16,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid'; // Importing Grid from MUI
 import Container from '@mui/material/Container';
+import RegistrationForm from "../RegistrationForm";
+
 
 const LogoDesignService = () => {
- // Function to render each card
-// Function to render each card
+  const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
 const renderCard = (image, title, description, price) => (
   <Card sx={{ maxWidth: 345 }}>
     <CardMedia
@@ -49,9 +54,11 @@ const renderCard = (image, title, description, price) => (
 
 return (
   <div>
+     {showForm && <RegistrationForm />}
+     {!showForm && <>
     <Spinner />
     
-    <Header name="Logo Design Service" />
+    <Header name="Logo Design Service" onButtonClick={handleButtonClick} />
   {/* Cards section */}
 <Container sx={{ py: 4 }}> {/* Optional Container for spacing */}
   <Grid container spacing={2} justifyContent="center"> {/* Use Grid to align items horizontally */}
@@ -88,6 +95,8 @@ return (
       <MidBanner />
       <Contact />
       <Scroll />
+      </>
+      }
     </div>
   );
 };

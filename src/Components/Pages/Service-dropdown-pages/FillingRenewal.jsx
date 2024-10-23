@@ -9,10 +9,16 @@ import MidBanner from '../MidBanner';
 import Spinner from '../Spinner';
 import Scroll from '../Scroll';
 import DropdownServiceCards from '../DropdownServiceCards';
+import RegistrationForm from "../RegistrationForm";
+
 
 
 const FillingRenewal = () => {
-  
+  const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
 
   // Inline styles with improved responsiveness
   const styles = {
@@ -81,9 +87,11 @@ const FillingRenewal = () => {
 
   return (
     <div style={styles.bodyReset}>
+      {showForm && <RegistrationForm />}
+      {!showForm && <>
     <Spinner />
     
-    <Header name="Filing a Renewal" />
+    <Header name="Filing a Renewal"  onButtonClick={handleButtonClick} />
   
     <div style={styles.container}>
       <div style={styles.contentContainer}>
@@ -135,6 +143,8 @@ const FillingRenewal = () => {
     <Contact />
    
     <Scroll />
+     </>
+      }
   </div>
   
     );

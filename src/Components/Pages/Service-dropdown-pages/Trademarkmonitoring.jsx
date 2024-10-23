@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import Navbar from '../Navbar'; 
 import Footer from '../Footer';
 import Contact from '../Contact';
@@ -9,9 +9,16 @@ import MidBanner from '../MidBanner';
 import Spinner from '../Spinner';
 import Scroll from '../Scroll';
 import DropdownServiceCards from '../DropdownServiceCards';
+import RegistrationForm from "../RegistrationForm";
+
 
 const Trademarkmonitoring = () => {
-  // Inline styles with improved responsiveness
+  const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
+  
   const styles = {
     container: {
       
@@ -78,6 +85,8 @@ const Trademarkmonitoring = () => {
 
   return (
     <div style={styles.bodyReset}>
+      {showForm && <RegistrationForm />}
+      {!showForm && <>
       <Spinner />
       
       <Header name="Trademark Monitoring" />
@@ -132,6 +141,8 @@ const Trademarkmonitoring = () => {
       <Contact />
       
       <Scroll />
+      </>
+}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Navbar from '../Pages/Navbar';
 import Header from '../Pages/Header';
 import Footer from '../Pages/Footer';
@@ -9,16 +9,26 @@ import Contact from '../Pages/Contact';
 import FAQ from '../Pages/FAQ'; 
 import Spinner from '../Pages/Spinner'; 
 import Scroll from '../Pages/Scroll';
+import RegistrationForm from "../Pages/RegistrationForm";
+
 
 
 
 
 export default function FAQ1() {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
+
   return (
     <>
+     {showForm && <RegistrationForm />}
+     {!showForm && <>
       <Spinner />
       
-      <Header name="FAQ" />
+      <Header name="FAQ" onButtonClick={handleButtonClick} />
       <FAQ />
       <Category/>
       <MidBanner />
@@ -26,6 +36,8 @@ export default function FAQ1() {
       <Contact />
      
       <Scroll />
+      </>
+      }
     </>
   );
 }

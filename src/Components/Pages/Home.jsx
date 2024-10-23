@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Navbar from './Navbar'
 import Slide from './Slide'
 import Service from './Service'
@@ -11,13 +11,23 @@ import Category from './Category'
 import MidBanner from './MidBanner'
 import FAQ from './FAQ'
 import Scroll from './Scroll'
+import RegistrationForm from "./RegistrationForm";
+
 
 export default function Home() {
-    return (
-        <>
+    const [showForm, setShowForm] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
+
+  return (
+    <>
+      {showForm && <RegistrationForm />}
+      {!showForm && <>
             <Spinner/>
             
-            <Slide/>
+            <Slide onButtonClick={handleButtonClick}/>
             <Service/>
             <About/>
             <Category/>
@@ -31,6 +41,8 @@ export default function Home() {
             <Contact/>
             
            <Scroll />
+           </>
+      }
         </>
     )
 }
