@@ -383,3 +383,52 @@ p {
   
   
   
+   
+
+
+
+/* 5th form  */
+
+
+
+.rush-processing {
+    margin: 20px 0; /* Adds space around the rush processing section */
+    padding: 15px; /* Adds padding inside the section */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .rush-content h2 {
+    font-size: 1.5rem; /* Size for main heading */
+    color: #2c3e50; /* Darker text color */
+    margin-bottom: 10px; /* Space below the heading */
+  }
+  
+  .rush-content h3 {
+    font-size: 1.2rem; /* Size for sub-heading */
+    color: #2980b9; /* Blue color for sub-heading */
+    margin: 10px 0; /* Space above and below */
+  }
+  
+  .rush-content h4 {
+    font-size: 1rem; /* Size for question heading */
+    color: #34495e; /* Slightly lighter color */
+    margin: 5px 0; /* Space above and below */
+  }
+  
+  .rush-description {
+    font-size: 0.9rem; /* Slightly smaller font for the paragraph */
+    color: #555; /* Dark gray color for description text */
+    margin-bottom: 15px; /* Space below the description */
+  }
+  .input-label label {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Adjust the gap as needed */
+  }
+  
+  .input-label input[type="checkbox"] {
+    margin: 0; /* Removes any default margin */
+  }
+  

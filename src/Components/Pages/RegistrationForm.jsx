@@ -497,6 +497,51 @@ const RegistrationForm = () => {
 
 
 
+{step === 5 && (
+  <div className="step-content">
+    {/* Rush Processing Section */}
+    <h2>Add Rush Processing to Expedite Your Application</h2>
+
+    <div className="rush-content">
+      <h3>You’re nearly finished!</h3>
+      <h4>Do you need your order processed faster?</h4>
+
+      <div className="rush-description">
+        <strong>RUSH PROCESSING.</strong> COMPLETED NEXT DAY WHEN TIME IS OF THE ESSENCE.
+        <p>
+          We know time is critical. With Rush Processing, we will complete your search results by the next business day, and file the application immediately after you have approved it.
+        </p>
+      </div>
+      <div className="input-label">
+  <label>
+    <input type="checkbox" {...register("rushProcessing")} />
+    24-hour Expedited Processing (Next Business Day): $49.00 USD
+  </label>
+</div>
+
+    </div>
+
+    <button type="button" onClick={prevStep} className="prev-button">
+      Back
+    </button>
+    <button type="button" onClick={nextStep} className="continue-button">
+      Continue
+    </button>
+  </div>
+)}
+
+
+
+
+
+
+
+
+
+
+
+
+
       </form>
     </div>
   );
