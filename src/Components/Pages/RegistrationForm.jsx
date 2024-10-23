@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import './RegistrationForm.css'; // Import your CSS file for styles
+import { Card, CardContent, CardActions, Typography, Radio, FormControlLabel, Button, Grid  } from '@mui/material';
+
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
   const { register, handleSubmit, formState: { errors }, watch, trigger } = useForm();
-  
+
   // Watch for selected protection type (name, slogan, logo)
   const protectionType = watch("protectionType");
 
@@ -29,7 +31,7 @@ const RegistrationForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="multi-step-form">
         {step === 1 && (
           <div className="step-content">
-            <h2 >Select What You Are Trying to Protect</h2>
+            <h2>Select What You Are Trying to Protect</h2>
             <div className="checkbox-group">
               <label>
                 <input
@@ -58,24 +60,20 @@ const RegistrationForm = () => {
               {errors.protectionType && <p className="error-message">{errors.protectionType.message}</p>}
             </div>
 
-           {protectionType === "logo" && (
-  <div className="logo-section">
-    {/* Small text description */}
-    <p className="small-text">
-      Please provide a complete and accurate description of your logo, including any words that may appear in the logo. 
-      An example of a description is: ‘a red cat wrapped around a blue outline of a globe’. 
-      Leave out the colors if you want to protect your logo in all colors.
-    </p>
-
-    {/* Input field for logo description */}
-    <div className="input-label">
-      <textarea
-        {...register("logoDescription", { required: "Logo description is required" })}
-        placeholder="Enter your logo description"
-        rows="4"
-        className="logo-description-input"
-      />
-
+            {protectionType === "logo" && (
+              <div className="logo-section">
+                <p className="small-text">
+                  Please provide a complete and accurate description of your logo, including any words that may appear in the logo. 
+                  An example of a description is: ‘a red cat wrapped around a blue outline of a globe’. 
+                  Leave out the colors if you want to protect your logo in all colors.
+                </p>
+                <div className="input-label">
+                  <textarea
+                    {...register("logoDescription", { required: "Logo description is required" })}
+                    placeholder="Enter your logo description"
+                    rows="4"
+                    className="logo-description-input"
+                  />
                   {errors.logoDescription && <p className="error-message">{errors.logoDescription.message}</p>}
                 </div>
 
@@ -192,19 +190,313 @@ const RegistrationForm = () => {
           </div>
         )}
 
-        {/* Navigation buttons */}
-        <div className="button-group">
-          {step > 1 && (
-            <button type="button" onClick={prevStep} className="nav-button">
-              Previous
+        {step === 2 && (
+          <div className="step-content">
+            <h2>Owner of Trademark Name</h2>
+            <h3>Will the trademark be owned by an individual or an entity such as a corporation or LLC?</h3>
+            <p>Identify the owner of the trademark. This is the person or organization who will be the owner of record. If you choose individuals, you can enter as many names as you want who own the mark. With an organization, you will have to identify someone to be the person of contact for the organization.</p>
+            <div className="checkbox-group">
+              <label>
+                <input
+                  type="radio"
+                  {...register("ownerType", { required: "Please select an option" })}
+                  value="individual"
+                />
+                Individual
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  {...register("ownerType")}
+                  value="organization"
+                />
+                Organization
+              </label>
+              {errors.ownerType && <p className="error-message">{errors.ownerType.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>First Name</span>
+              <input
+                type="text"
+                {...register("firstName", { required: "First name is required" })}
+                placeholder="Enter first name"
+              />
+              {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>Last Name</span>
+              <input
+                type="text"
+                {...register("lastName", { required: "Last name is required" })}
+                placeholder="Enter last name"
+              />
+              {errors.lastName && <p className="error-message">{errors.lastName.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>Address</span>
+              <input
+                type="text"
+                {...register("address", { required: "Address is required" })}
+                placeholder="Enter address"
+              />
+              {errors.address && <p className="error-message">{errors.address.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>City</span>
+              <input
+                type="text"
+                {...register("city", { required: "City is required" })}
+                placeholder="Enter city"
+              />
+              {errors.city && <p className="error-message">{errors.city.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>State/Province/Region</span>
+              <select {...register("state", { required: "Please select a state" })}>
+                <option value="">Select a state</option>
+                <option value="CA">California</option>
+                <option value="NY">New York</option>
+                {/* Add more states as needed */}
+              </select>
+              {errors.state && <p className="error-message">{errors.state.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>Zip/Postal Code</span>
+              <input
+                type="text"
+                {...register("postalCode", { required: "Postal code is required" })}
+                placeholder="Enter postal code"
+              />
+              {errors.postalCode && <p className="error-message">{errors.postalCode.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>Email</span>
+              <input
+                type="email"
+                {...register("email", { required: "Email is required" })}
+                placeholder="Enter email"
+              />
+              {errors.email && <p className="error-message">{errors.email.message}</p>}
+            </div>
+
+            <div className="input-label">
+              <span>Phone</span>
+              <input
+                type="tel"
+                {...register("phone", { required: "Phone number is required" })}
+                placeholder="Enter phone number"
+              />
+              {errors.phone && <p className="error-message">{errors.phone.message}</p>}
+            </div>
+
+            <button type="button" onClick={prevStep} className="prev-button">
+              Back
             </button>
-          )}
-          {step < 4 && (
-            <button type="button" onClick={nextStep} className="nav-button">
-              Next
+            <button type="button" onClick={nextStep} className="continue-button">
+              Continue
             </button>
-          )}
-        </div>
+          </div>
+        )}
+
+{step === 3 && (
+  <div className="step-content">
+    <h2>Choose Your Trademark Class</h2>
+    <p>
+      Start describing the goods and services related to your mark. Trademark Genius compares the description you provide and automatically provides descriptions from the USPTO ID Manual for your consideration.
+    </p>
+
+    <div className="input-label">
+  <span>Do you sell, or intend to sell, goods or services?</span>
+  <div className="radio-group">
+    <label>
+      <input
+        type="radio"
+        value="goods"
+        {...register("sellingType", { required: "This field is required" })}
+      />
+      Goods
+    </label>
+    <label>
+      <input
+        type="radio"
+        value="services"
+        {...register("sellingType", { required: "This field is required" })}
+      />
+      Services
+    </label>
+       
+      </div>
+      {errors.sellingType && <p className="error-message">{errors.sellingType.message}</p>}
+    </div>
+
+    <div className="input-label">
+      <span>Please provide a description of your goods or services</span>
+      <textarea
+        {...register("goodsServicesDescription", { required: "This field is required" })}
+        placeholder="Describe the goods/services"
+        rows="4"
+      />
+      {errors.goodsServicesDescription && <p className="error-message">{errors.goodsServicesDescription.message}</p>}
+    </div>
+
+    <button type="button" onClick={prevStep} className="prev-button">
+      Back
+    </button>
+    <button type="button" onClick={nextStep} className="continue-button">
+    Continue
+    </button>
+  </div>
+)}
+
+
+
+{step === 4 && (
+  <div className="step-content">
+    <h2>Choose a Package</h2>
+    <p>
+      All packages include lifetime customer support and our 100% satisfaction guaranteed.
+    </p>
+
+    <Grid container spacing={2} justifyContent="center" className="package-selection">
+      {/* First Card */}
+<Grid item xs={12} sm={6} md={4}> {/* Changed from md={4} to md={6} for wider cards */}
+  <Card variant="outlined" sx={{ borderRadius: '16px', boxShadow: 3, width: '100%' }}>
+    <CardContent>
+      <Typography variant="h6" component="div" sx={{ fontSize: '1rem', color: '#1976d2', fontWeight: 'bold' }}>
+        Basic
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.85rem', color: '#333' }}>$99 + Federal USPTO fees</Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>14 day processing time</Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        We will complete your search within 14 business days, and file the application after you have approved it.
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>Trademark Monitoring</Typography>
+     
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        Prepared & Reviewed by Our Specialists
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        Have peace of mind knowing our specialists will research your mark.
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        100% Satisfaction Guaranteed
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <FormControlLabel
+        control={
+          <Radio
+            value="basic"
+            {...register("packageType", { required: "Please select a package" })}
+          />
+        }
+        label="Select"
+      />
+    </CardActions>
+  </Card>
+</Grid>
+
+
+    {/* Second Card */}
+<Grid item xs={12} sm={6} md={4}> {/* Changed from md={4} to md={6} for wider cards */}
+  <Card variant="outlined" sx={{ borderRadius: '16px', boxShadow: 3, width: '100%' }}>
+    <CardContent>
+      <Typography variant="h6" component="div" sx={{ fontSize: '1rem', color: '#1976d2', fontWeight: 'bold' }}>
+        Standard
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.85rem', color: '#333' }}>$199 + Federal USPTO fees</Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>Cease & Desist Letter</Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        In the event that you find an infringing mark, we will provide a Cease and Desist template for you to deliver to your infringing party.
+      </Typography>
+     
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.
+      </Typography>
+      
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        Have peace of mind knowing our specialists will research your mark.
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        100% Satisfaction Guaranteed
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <FormControlLabel
+        control={
+          <Radio
+            value="standard"
+            {...register("packageType", { required: "Please select a package" })}
+          />
+        }
+        label="Select"
+      />
+    </CardActions>
+  </Card>
+</Grid>
+
+
+    {/* Third Card */}
+<Grid item xs={12} sm={6} md={4}> {/* Changed from md={4} to md={6} for wider cards */}
+  <Card variant="outlined" sx={{ borderRadius: '16px', boxShadow: 3, width: '100%' }}>
+    <CardContent>
+      <Typography variant="h6" component="div" sx={{ fontSize: '1rem', color: '#1976d2', fontWeight: 'bold' }}>
+        Premier
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.85rem', color: '#333' }}>$299 + Federal USPTO fees</Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>Handle Additional Filings</Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        60% of trademark applications require additional filings for approval. We handle additional filings for you.
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>Trademark Monitoring</Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.
+      </Typography>
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        Prepared & Reviewed by Our Specialists
+      </Typography>
+        
+      <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
+        100% Satisfaction Guaranteed
+      </Typography>
+    </CardContent>
+          <CardActions>
+            <FormControlLabel
+              control={
+                <Radio
+                  value="premier"
+                  {...register("packageType", { required: "Please select a package" })}
+                />
+              }
+              label="Select"
+            />
+          </CardActions>
+        </Card>
+      </Grid>
+    </Grid>
+
+    {/* Error message for package selection */}
+    {errors.packageType && <p className="error-message">{errors.packageType.message}</p>}
+
+    <Button onClick={prevStep} variant="contained" className="prev-button">
+      Back
+    </Button>
+    <button type="button" onClick={nextStep} className="continue-button">
+      Continue
+    </button>
+  </div>
+)}
+
+
+
+
       </form>
     </div>
   );

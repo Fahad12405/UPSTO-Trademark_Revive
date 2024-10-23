@@ -1,5 +1,8 @@
 /* General Body Styles */
-
+body {
+    margin: 0; /* Reset default margin */
+    font-family: Arial, sans-serif; /* Set a default font */
+}
 
 /* Form Container */
 .form-container {
@@ -13,7 +16,7 @@
 
 /* Multi-Step Form */
 .multi-step-form {
-    width: 100%; /* Make the form full width on smaller screens */
+    width: 100%; /* Full width on smaller screens */
     max-width: 800px; /* Max width for larger screens */
     padding: 40px;
     background-color: #ffffff;
@@ -42,7 +45,6 @@
     text-align: center;
     font-weight: 600;
     border-bottom: 2px solid #007bff; /* Underline for emphasis */
-    padding-bottom: 10px;
 }
 
 /* Group Styles (Checkbox & Radio) */
@@ -85,7 +87,10 @@ input[type="radio"] {
 }
 
 /* Text Input */
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
     width: 100%;
     padding: 15px;
     border: 1px solid #007bff;
@@ -95,13 +100,17 @@ input[type="text"] {
     transition: border-color 0.3s ease;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
     border-color: #0056b3;
     outline: none;
 }
 
-/* Continue Button */
-.continue-button {
+/* Buttons */
+.continue-button,
+.prev-button,
+.submit-button {
     display: block;
     width: 100%;
     background-color: #007bff;
@@ -116,8 +125,10 @@ input[type="text"]:focus {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.continue-button:hover {
-    background-color: #0056b3;
+.continue-button:hover,
+.submit-button:hover,
+.prev-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover for depth */
 }
 
@@ -159,14 +170,7 @@ p {
     background-color: #218838;
 }
 
-/* Form Sections */
-.checkbox-group,
-.radio-group,
-.input-label {
-    animation: fadeInUp 0.5s ease-in-out;
-}
-
-/* New Styles for Small Text Description */
+/* Small Text Description */
 .small-text {
     font-size: 0.85rem; /* Slightly smaller than normal text */
     color: #555; /* Light grey for contrast */
@@ -205,6 +209,13 @@ p {
     }
 }
 
+/* Form Sections */
+.checkbox-group,
+.radio-group,
+.input-label {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 320px) {
     .form-container {
@@ -212,7 +223,6 @@ p {
     }
 
     .multi-step-form {
-        width: 100%; /* Full width on mobile */
         padding: 20px; /* Reduce padding */
         box-shadow: none; /* Remove shadow for simplicity */
     }
@@ -264,3 +274,112 @@ p {
         font-size: 0.9rem; /* Smaller font size */
     }
 }
+
+/* Step 3 Styles */
+.step-content {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for step 3 */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.step-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2c3e50; /* Darker text color */
+}
+
+.step-content p {
+    margin-bottom: 15px;
+    color: #555; /* Slightly lighter text for instructions */
+}
+
+/* Styling for radio button group */
+.radio-group {
+    display: flex; /* Flex layout for radio buttons */
+    align-items: center; /* Center align vertically */
+}
+
+/* Styling for input fields and textareas */
+.input-label input[type="radio"] {
+    margin: 0 10px 0 0; /* Space between radio button and label */
+}
+
+.input-label input,
+.input-label textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 12px; /* Inner spacing */
+    border: 1px solid #ccc; /* Default border for inputs */
+    border-radius: 8px; /* More pronounced rounded corners */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.input-label input:focus,
+.input-label textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Light shadow */
+}
+
+
+
+
+
+/* step 4rth  */
+
+.package-selection {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures all cards have the same height */
+  }
+  
+  .step-content {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif; /* Change font-family as desired */
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333; /* Main title color */
+  }
+  
+  .package-selection {
+    margin: 20px 0;
+  }
+  
+  .card {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease; /* Animation on hover */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+  }
+  
+  .card-content {
+    background-color: #f9f9f9; /* Light background for cards */
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    color: #007bff; /* Package title color */
+    font-weight: bold;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    color: #555; /* Description text color */
+  }
+  
+  .error-message {
+    color: red; /* Error message color */
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  
+  
+  
