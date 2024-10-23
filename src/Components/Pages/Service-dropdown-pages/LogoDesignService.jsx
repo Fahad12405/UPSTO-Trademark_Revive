@@ -92,7 +92,7 @@ return (
     
       <Service />
       <Category />
-      <MidBanner />
+      <MidBanner  onButtonClick={handleButtonClick} />
       <Contact />
       <Scroll />
       </>

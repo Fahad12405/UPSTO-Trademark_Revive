@@ -31,7 +31,7 @@ export default function FAQ1() {
       <Header name="FAQ" onButtonClick={handleButtonClick} />
       <FAQ />
       <Category/>
-      <MidBanner />
+      <MidBanner  onButtonClick={handleButtonClick} />
       <Testimonial />
       <Contact />
      

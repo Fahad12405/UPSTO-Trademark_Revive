@@ -99,7 +99,7 @@ const RevivalAbandonment = () => {
       <Service />
       <Contact />
       <Category />
-      <MidBanner />
+      <MidBanner  onButtonClick={handleButtonClick} />
       <Scroll />
       </>
 }

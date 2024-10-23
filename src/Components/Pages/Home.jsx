@@ -31,7 +31,7 @@ export default function Home() {
             <Service/>
             <About/>
             <Category/>
-            <MidBanner/>
+            <MidBanner  onButtonClick={handleButtonClick}/>
             <FAQ/>
            
 

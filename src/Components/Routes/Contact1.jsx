@@ -26,7 +26,7 @@ export default function ContactPage() { // Give a name to the function component
         <Header name="Contact" onButtonClick={handleButtonClick} />
         <Contact />
         <Service />
-        <MidBanner />
+        <MidBanner  onButtonClick={handleButtonClick} />
         <Scroll />
         <Footer />
       </>

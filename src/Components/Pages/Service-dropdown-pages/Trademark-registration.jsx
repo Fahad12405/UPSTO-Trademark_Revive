@@ -37,7 +37,7 @@ const TrademarkRegistration = () => {
 
         <Service />
         <Category />
-        <MidBanner />
+        <MidBanner  onButtonClick={handleButtonClick} />
         <Contact />
 
         <Scroll />

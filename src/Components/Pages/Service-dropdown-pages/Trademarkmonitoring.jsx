@@ -89,7 +89,7 @@ const Trademarkmonitoring = () => {
       {!showForm && <>
       <Spinner />
       
-      <Header name="Trademark Monitoring" />
+      <Header name="Trademark Monitoring"onButtonClick={handleButtonClick} />
 
       <div style={styles.container}>
         <div style={styles.contentContainer}>
@@ -137,7 +137,7 @@ const Trademarkmonitoring = () => {
 
       <Service />
       <Category />
-      <MidBanner />
+      <MidBanner  onButtonClick={handleButtonClick} />
       <Contact />
       
       <Scroll />
