@@ -29,7 +29,7 @@ const RegistrationForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="multi-step-form">
         {step === 1 && (
           <div className="step-content">
-            <h2>Select What You Are Trying to Protect</h2>
+            <h2 >Select What You Are Trying to Protect</h2>
             <div className="checkbox-group">
               <label>
                 <input
@@ -58,7 +58,7 @@ const RegistrationForm = () => {
               {errors.protectionType && <p className="error-message">{errors.protectionType.message}</p>}
             </div>
 
-            {protectionType === "logo" && (
+           {protectionType === "logo" && (
   <div className="logo-section">
     {/* Small text description */}
     <p className="small-text">
