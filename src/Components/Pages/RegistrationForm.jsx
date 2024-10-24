@@ -414,7 +414,7 @@ const RegistrationForm = () => {
       <Typography variant="body2" sx={{ fontSize: '0.85rem', color: '#333' }}>$199 + Federal USPTO fees</Typography>
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>Cease & Desist Letter</Typography>
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
-        In the event that you find an infringing mark, we will provide a Cease and Desist template for you to deliver to your infringing party.
+        In the event that you find an infringing mark, we will provide a  Desist template for you to deliver to your infringing party.
       </Typography>
      
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
@@ -453,11 +453,11 @@ const RegistrationForm = () => {
       <Typography variant="body2" sx={{ fontSize: '0.85rem', color: '#333' }}>$299 + Federal USPTO fees</Typography>
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>Handle Additional Filings</Typography>
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
-        60% of trademark applications require additional filings for approval. We handle additional filings for you.
+        60% of trademark applications require additional filings for approval. We handle additional filings.
       </Typography>
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>Trademark Monitoring</Typography>
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
-        1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.
+        1 Month of free trademark monitoring included to ensure no infringements on your mark.
       </Typography>
       <Typography variant="body2" sx={{ fontSize: '0.75rem', color: '#666' }}>
         Prepared & Reviewed by Our Specialists

@@ -204,6 +204,9 @@ p {
         transform: translateY(20px);
     }
     100% {
+
+
+
         opacity: 1;
         transform: translateY(0);
     }
@@ -219,12 +222,16 @@ p {
 /* Media Queries for Responsiveness */
 @media (max-width: 320px) {
     .form-container {
-        padding: 10px; /* Reduce padding on smaller screens */
+        padding: 0px;
+       
+       
     }
 
     .multi-step-form {
-        padding: 20px; /* Reduce padding */
-        box-shadow: none; /* Remove shadow for simplicity */
+        padding: 5px; 
+        box-shadow: none; 
+        background-color: transparent;
+      
     }
 
     h2 {
@@ -234,6 +241,7 @@ p {
 
     .step-content {
         margin-bottom: 15px; /* Adjust bottom margin */
+        border-radius: 50px;
     }
 
     .checkbox-group,
@@ -242,7 +250,7 @@ p {
     }
 
     .input-label {
-        margin-bottom: 15px; /* Reduce margin for input label */
+        margin-bottom: 15px; 
     }
 
     /* Small Text Description */
@@ -303,16 +311,22 @@ p {
 
 /* Styling for input fields and textareas */
 .input-label input[type="radio"] {
-    margin: 0 10px 0 0; /* Space between radio button and label */
+    margin: 0 10px 0 0; 
 }
 
-.input-label input,
 .input-label textarea {
     width: 100%; /* Full width for inputs */
     padding: 12px; /* Inner spacing */
     border: 1px solid #ccc; /* Default border for inputs */
     border-radius: 8px; /* More pronounced rounded corners */
     transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.input-label input {
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    transition: border-color 0.3s, box-shadow 0.3s; 
 }
 
 .input-label input:focus,
@@ -423,12 +437,12 @@ p {
     margin-bottom: 15px; /* Space below the description */
   }
   .input-label label {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    gap: 4px; /* Adjust the gap as needed */
+    gap: 14px;  */
   }
   
   .input-label input[type="checkbox"] {
-    margin: 0; /* Removes any default margin */
+    /* margin: 0; Removes any default margin */
   }
   
