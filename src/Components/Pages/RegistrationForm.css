@@ -223,63 +223,139 @@ p {
 @media (max-width: 320px) {
     .form-container {
         padding: 0px;
-       
-       
+        width: 100%; /* Full width on mobile */
+        margin: 0 auto;
     }
 
     .multi-step-form {
-        padding: 5px; 
-        box-shadow: none; 
+        padding: 5px;
+        width: 100%; /* Full width on mobile */
+        box-shadow: none;
         background-color: transparent;
-      
     }
 
     h2 {
-        font-size: 1.4rem; /* Smaller heading on mobile */
-        margin-bottom: 10px; /* Reduce bottom margin */
+        font-size: 1.4rem;
+        margin-bottom: 10px;
     }
 
     .step-content {
-        margin-bottom: 15px; /* Adjust bottom margin */
-        border-radius: 50px;
+        margin-bottom: 15px;
+        border-radius: 15px; /* Reduced border-radius for improved layout */
+        width: 100%; /* Full width */
     }
 
     .checkbox-group,
     .radio-group {
-        padding: 10px; /* Reduce padding */
+        padding: 10px;
+        width: 100%; /* Full width for better alignment */
     }
 
     .input-label {
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
     }
 
     /* Small Text Description */
     .small-text {
-        font-size: 12px; /* Smaller text on mobile */
-        margin-bottom: 8px; /* Reduce margin */
+        font-size: 12px;
+        margin-bottom: 8px;
     }
 
     /* Textarea Input */
     .logo-description-input {
-        padding: 8px; /* Less padding for textarea */
-        font-size: 14px; /* Smaller font size */
+        padding: 8px;
+        font-size: 14px;
+        width: 100%; /* Full width for textarea */
     }
 
     /* Error Message */
     .error-message {
-        font-size: 0.8rem; /* Smaller error message */
+        font-size: 0.8rem;
     }
 
     /* Continue Button */
     .continue-button {
-        padding: 12px; /* Less padding for the button */
-        font-size: 0.9rem; /* Smaller font size */
+        padding: 10px; /* Reduced padding for button */
+        font-size: 0.9rem;
+        width: 100%; /* Full width for buttons */
     }
 
     /* Navigation Buttons */
     .nav-button {
-        padding: 8px 16px; /* Adjust button padding */
-        font-size: 0.9rem; /* Smaller font size */
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        width: 48%; /* Width for buttons in a row */
+        margin: 5px 1%; /* Margin for spacing */
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 350px) {
+    .form-container {
+        padding: 0px;
+        width: 100%; /* Full width on mobile */
+        margin: 0 auto;
+    }
+
+    .multi-step-form {
+        padding: 5px;
+        width: 100%; /* Full width on mobile */
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .step-content {
+        margin-bottom: 15px;
+        border-radius: 15px; /* Reduced border-radius for improved layout */
+        width: 100%; /* Full width */
+    }
+
+    .checkbox-group,
+    .radio-group {
+        padding: 10px;
+        width: 100%; /* Full width for better alignment */
+    }
+
+    .input-label {
+        margin-bottom: 15px;
+    }
+
+    /* Small Text Description */
+    .small-text {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    /* Textarea Input */
+    .logo-description-input {
+        padding: 8px;
+        font-size: 14px;
+        width: 100%; /* Full width for textarea */
+    }
+
+    /* Error Message */
+    .error-message {
+        font-size: 0.8rem;
+    }
+
+    /* Continue Button */
+    .continue-button {
+        padding: 10px; /* Reduced padding for button */
+        font-size: 0.9rem;
+        width: 100%; /* Full width for buttons */
+    }
+
+    /* Navigation Buttons */
+    .nav-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        width: 48%; /* Width for buttons in a row */
+        margin: 5px 1%; /* Margin for spacing */
+        box-sizing: border-box;
     }
 }
 
