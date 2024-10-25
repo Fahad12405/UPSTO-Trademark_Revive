@@ -491,7 +491,7 @@ const RegistrationForm = () => {
 
             <div className="package-selection">
               {['basic', 'standard', 'premier'].map((type) => (
-                <div className="package-card" key={type}>
+                <div className="package-card"  style={{ width: "100%", padding: "10px" }}  key={type}>
                   <div className="package-header">
                     <h3 style={{ color: '#1976d2', fontWeight: 'bold' }}>
                       {type.charAt(0).toUpperCase() + type.slice(1)}
