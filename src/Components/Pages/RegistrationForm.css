@@ -716,65 +716,8 @@ p {
 
 
 
-/* step 4rth  */
 
-.package-selection {
-    display: flex;
-    justify-content: center;
-    align-items: stretch; /* Ensures all cards have the same height */
-  }
-  
-  .step-content {
-    text-align: center;
-    padding: 20px;
-    font-family: 'Arial', sans-serif; /* Change font-family as desired */
-  }
-  
-  h2 {
-    font-size: 24px;
-    color: #333; /* Main title color */
-  }
-  
-  .package-selection {
-    margin: 20px 0;
-  }
-  
-  .card {
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s ease; /* Animation on hover */
-  }
-  
-  .card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-  }
-  
-  .card-content {
-    background-color: #f9f9f9; /* Light background for cards */
-    padding: 16px;
-    border-radius: 8px;
-  }
-  
-  .card-title {
-    font-size: 20px;
-    color: #007bff; /* Package title color */
-    font-weight: bold;
-  }
-  
-  .card-description {
-    font-size: 14px;
-    color: #555; /* Description text color */
-  }
-  
-  .error-message {
-    color: red; /* Error message color */
-    font-size: 12px;
-    margin-top: 10px;
-  }
-  
-  
-  
-   
+
 
 
 
@@ -813,16 +756,7 @@ p {
     color: #555; /* Dark gray color for description text */
     margin-bottom: 15px; /* Space below the description */
   }
-  .input-label label {
-    /* display: flex;
-    align-items: center;
-    gap: 14px;  */
-  }
-  
-  .input-label input[type="checkbox"] {
-    /* margin: 0; Removes any default margin */
-  }
-  
+
 
 
 
@@ -867,7 +801,7 @@ p {
     transition: transform 0.2s;
     padding: 15px; /* Add padding to the card for better content spacing */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better depth */
-    height: 320px; /* Fixed height for uniformity */
+    height: auto  ; /* Fixed height for uniformity */
     display: flex; /* Make card a flex container */
     flex-direction: column; /* Align children vertically */
     justify-content: space-between; /* Space out children */

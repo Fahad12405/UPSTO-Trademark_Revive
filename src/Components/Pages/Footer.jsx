@@ -11,21 +11,16 @@ export default function Footer() {
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-lg-3 col-md-6">
-              <h4 className="text-white mb-3">Quick Link</h4>
-              <a className="btn btn-link" href>
-                Home
-              </a>
-              <a className="btn btn-link" href>
-                About Us
-              </a>
-              <a className="btn btn-link" href>
-                FAQ
-              </a>
-              <a className="btn btn-link" href>
-                Contact
-              </a>
-
+              <h4 className="text-white mb-3">Quick Links</h4>
+              <div className="d-flex flex-column">
+                <Link to="/Home" className="text-white mb-2">Home</Link>
+                <Link to="/About1" className="text-white mb-2">About</Link>
+                <Link to="/FAQ1" className="text-white mb-2">FAQ</Link>
+                <Link to="/contact" className="text-white mb-2">Contact</Link>
+              </div>
             </div>
+            
+
             <div className="col-lg-3 col-md-6">
               <h4 className="text-white mb-3">Contact</h4>
               <p className="mb-2">
@@ -48,13 +43,6 @@ export default function Footer() {
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light p-1"
-                    src="/img/course-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-4">
-                  <img
-                    className="img-fluid bg-light p-1"
                     src="/img/course-2.jpg"
                     alt=""
                   />
@@ -62,28 +50,35 @@ export default function Footer() {
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light p-1"
-                    src="/img/course-3.jpg"
+                    src="/img/category2.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light p-1"
-                    src="/img/course-2.jpg"
+                    src="/img/category3.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light p-1"
-                    src="/img/course-3.jpg"
+                    src="/img/category4.webp"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light p-1"
-                    src="/img/course-1.jpg"
+                    src="/img/category5.webp"
+                    alt=""
+                  />
+                </div>
+                <div className="col-4">
+                  <img
+                    className="img-fluid bg-light p-1"
+                    src="/img/category6.jpg"
                     alt=""
                   />
                 </div>

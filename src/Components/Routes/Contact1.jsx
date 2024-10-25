@@ -28,7 +28,7 @@ export default function ContactPage() { // Give a name to the function component
         <Service />
         <MidBanner  onButtonClick={handleButtonClick} />
         <Scroll />
-        <Footer />
+      
       </>
       }
     </>

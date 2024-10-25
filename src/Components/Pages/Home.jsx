@@ -28,6 +28,7 @@ export default function Home() {
             <Spinner/>
             
             <Slide onButtonClick={handleButtonClick}/>
+            
             <Service/>
             <About/>
             <Category/>

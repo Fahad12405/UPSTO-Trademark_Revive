@@ -47,62 +47,61 @@ const RevivalAbandonment = () => {
         </Typography>
       </CardContent>
       <CardActions sx={{ marginBottom: 1 }}>
-  <Button size="small" variant="contained" color="primary">
-    Register Now
-  </Button>
-</CardActions>
+       
+      </CardActions>
 
     </Card>
   );
 
   return (
     <div>
- {showForm && <RegistrationForm />}
- {!showForm && <>
+      {showForm && <RegistrationForm />}
+      {!showForm && <>
 
 
 
 
-      <Spinner />
-      <Header name="Revival for Abandonment" onButtonClick={handleButtonClick} />
+        <Spinner />
+        <Header name="Revival for Abandonment" onButtonClick={handleButtonClick} />
 
-      {/* Cards section */}
-      <Container sx={{ py: 4 }}> {/* Optional Container for spacing */}
-        <Grid container spacing={2} justifyContent="center"> {/* Use Grid to align items horizontally */}
-          <Grid item xs={12} sm={6} md={4}> {/* Each card occupies 4 columns on medium screens */}
-            {renderCard(
-              "/img/carousel-2.jpg", 
-              "Revival From Abandonment", 
-              "Has your application recently been abandoned? We’ll help revive it without having to restart the entire process.", 
-              "$299.00 per application + USPTO gov fees"
-            )}
+        {/* Cards section */}
+        <Container sx={{ py: 4 }}> {/* Optional Container for spacing */}
+          <Grid container spacing={2} justifyContent="center"> {/* Use Grid to align items horizontally */}
+            <Grid item xs={12} sm={6} md={4}> {/* Each card occupies 4 columns on medium screens */}
+              {renderCard(
+                "img/revival1.jpg",
+                "Restore Your Abandoned Trademark",
+                "Trademark Revive assists in restoring applications that were  abandoned, guiding you through  entire process efficiently.",
+                "$299.00 per application + USPTO government fees"
+              )}
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              {renderCard(
+                "/img/revival2.jpg",
+                "Reclaim Your Brand's Identity",
+                "Don't let an abandoned application hinder your brand. Trademark Revive will help you reclaim it and continue your registration journey seamlessly.",
+                "$299.00 per application + USPTO government fees"
+              )}
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              {renderCard(
+                "/img/revival3.webp",
+                "Get Your Trademark Back on Track",
+                "With Trademark Revive, revive your trademark application without the hassle of starting from scratch, ensuring quick and efficient reactivation.",
+                "$299.00 per application + USPTO government fees"
+              )}
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            {renderCard(
-              "/img/carousel-1.jpg", 
-              "Revival From Abandonment", 
-              "Has your application recently been abandoned? We’ll help revive it without having to restart the entire process.", 
-              "$299.00 per application + USPTO gov fees"
-            )}
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            {renderCard(
-              "/img/search-banner-img2.jpg", 
-              "Revival From Abandonment", 
-              "Has your application recently been abandoned? We’ll help revive it without having to restart the entire process.", 
-              "$299.00 per application + USPTO gov fees"
-            )}
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
 
-      <Service />
-      <Contact />
-      <Category />
-      <MidBanner  onButtonClick={handleButtonClick} />
-      <Scroll />
+
+        <Service />
+        <Contact />
+        <Category />
+        <MidBanner onButtonClick={handleButtonClick} />
+        <Scroll />
       </>
-}
+      }
     </div>
   );
 };

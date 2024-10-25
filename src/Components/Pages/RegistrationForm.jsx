@@ -375,15 +375,63 @@ const RegistrationForm = () => {
             </div>
 
             <div className="input-label">
-              <span>State/Province/Region</span>
-              <select {...register("state", { required: "Please select a state" })}>
-                <option value="">Select a state</option>
-                <option value="CA">California</option>
-                <option value="NY">New York</option>
-                {/* Add more states as needed */}
-              </select>
-              {errors.state && <p className="error-message">{errors.state.message}</p>}
-            </div>
+  <span>State/Province/Region</span>
+  <select {...register("state", { required: "Please select a state" })}>
+    <option value="">Select a state</option>
+    <option value="AL">Alabama</option>
+    <option value="AK">Alaska</option>
+    <option value="AZ">Arizona</option>
+    <option value="AR">Arkansas</option>
+    <option value="CA">California</option>
+    <option value="CO">Colorado</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="HI">Hawaii</option>
+    <option value="ID">Idaho</option>
+    <option value="IL">Illinois</option>
+    <option value="IN">Indiana</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NV">Nevada</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NM">New Mexico</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="ND">North Dakota</option>
+    <option value="OH">Ohio</option>
+    <option value="OK">Oklahoma</option>
+    <option value="OR">Oregon</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="SD">South Dakota</option>
+    <option value="TN">Tennessee</option>
+    <option value="TX">Texas</option>
+    <option value="UT">Utah</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WA">Washington</option>
+    <option value="WV">West Virginia</option>
+    <option value="WI">Wisconsin</option>
+    <option value="WY">Wyoming</option>
+    {/* Add U.S. territories if needed */}
+  </select>
+  {errors.state && <p className="error-message">{errors.state.message}</p>}
+</div>
 
             <div className="input-label">
               <span>Zip/Postal Code</span>
@@ -482,81 +530,82 @@ const RegistrationForm = () => {
           </div>
         )}
 
-        {step === 4 && (
-          <div className="step-content">
-            <h2>Choose a Package</h2>
+{step === 4 && (
+  <div className="step-content">
+    <h2>Choose a Package</h2>
+    <p>
+      All packages include lifetime customer support and our 100% satisfaction guaranteed.
+    </p>
+
+    <div className="package-selection">
+      {['basic', 'standard', 'premier'].map((type) => (
+        <div className="package-card" key={type}>
+          <div className="package-header">
+            <h3 style={{ color: '#1976d2', fontWeight: 'bold' }}>
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </h3>
             <p>
-              All packages include lifetime customer support and our 100% satisfaction guaranteed.
+              {type === 'basic' && '$99'}
+              {type === 'standard' && '$199'}
+              {type === 'premier' && '$299'}
             </p>
-
-            <div className="package-selection">
-              {['basic', 'standard', 'premier'].map((type) => (
-                <div className="package-card"  style={{ width: "100%", padding: "10px" }}  key={type}>
-                  <div className="package-header">
-                    <h3 style={{ color: '#1976d2', fontWeight: 'bold' }}>
-                      {type.charAt(0).toUpperCase() + type.slice(1)}
-                    </h3>
-                    <p>
-                      {type === 'basic' && '$99'}
-                      {type === 'standard' && '$199'}
-                      {type === 'premier' && '$299'}
-                    </p>
-                  </div>
-                  <div className="package-details">
-                    <p>
-                      {type === 'basic' && '14 day processing time'}
-                      {type === 'standard' && 'Cease & Desist Letter'}
-                      {type === 'premier' && 'Handle Additional Filings'}
-                    </p>
-                    <p>
-                      {type === 'basic' && 'We will complete your search within 14 business days, and file the application after you have approved it.'}
-                      {type === 'standard' && '1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.'}
-                      {type === 'premier' && '60% of trademark applications require additional filings for approval. We handle additional filings.'}
-                    </p>
-                    <p>100% Satisfaction Guaranteed</p>
-                  </div>
-                  <div className="package-selection-control">
-                    <Controller
-                      control={control}
-                      name="packageType"
-                      rules={{ required: "Please select a package" }}
-                      render={({ field }) => (
-                        <label>
-                          <input
-                            type="radio"
-                            value={type || ""}
-                            checked={field.value === type}  // Ensures correct radio button selection
-                            onChange={() => {
-                              field.onChange(type);
-                              const packageDetails = getPackageDetails(type);
-                              setSelectedPackageDetails({
-                                type,
-                                price: packageDetails.price,
-                                description: packageDetails.description
-                              });
-                            }} // Update form state when clicked
-                          />
-                          Select
-                        </label>
-                      )}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Error message for package selection */}
-            {errors.packageType && <p className="error-message">{errors.packageType.message}</p>}
-
-            <button type="button" onClick={prevStep} className="prev-button">
-              Back
-            </button>
-            <button type="button" onClick={handleSubmit(onValid)} className="continue-button">
-              Continue
-            </button>
           </div>
-        )}
+          <div className="package-details">
+            <p>
+              {type === 'basic' && '14 day processing time'}
+              {type === 'standard' && 'Cease & Desist Letter'}
+              {type === 'premier' && 'Handle Additional Filings'}
+            </p>
+            <p>
+              {type === 'basic' && 'We will complete your search within 14 business days, and file the application after you have approved it.'}
+              {type === 'standard' && '1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.'}
+              {type === 'premier' && '60% of trademark applications require additional filings for approval. We handle additional filings.'}
+            </p>
+            <p>100% Satisfaction Guaranteed</p>
+          </div>
+          <div className="package-selection-control">
+            <Controller
+              control={control}
+              name="packageType"
+              rules={{ required: "Please select a package" }}
+              render={({ field }) => (
+                <label>
+                  <input
+                    type="radio"
+                    value={type || ""}
+                    checked={field.value === type} // Ensures correct radio button selection
+                    onChange={() => {
+                      field.onChange(type);
+                      const packageDetails = getPackageDetails(type);
+                      setSelectedPackageDetails({
+                        type,
+                        price: packageDetails.price,
+                        description: packageDetails.description
+                      });
+                    }} // Update form state when clicked
+                  />
+                  Select
+                </label>
+              )}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
 
+    {/* Error message for package selection */}
+    {errors.packageType && <p className="error-message">{errors.packageType.message}</p>}
+
+    <div style={{ marginTop: '20px' }}>
+      <button type="button" onClick={prevStep} className="prev-button">
+        Back
+      </button>
+      <button type="button" onClick={handleSubmit(onValid)} className="continue-button">
+        Continue
+      </button>
+    </div>
+  </div>
+)}
 
 
 

@@ -24,7 +24,7 @@ export default function Slide({ onButtonClick }) { // Accepting the prop
                   <div className="container">
                     <div className="row justify-content-start">
                       <div className="col-sm-10 col-lg-8">
-                        <h6 className="text-primary text-uppercase mb-2 animated slideInDown">
+                        <h6 className="text-white text-uppercase mb-4 animated slideInDown">
                           File Your Trademark Online
                         </h6>
                         <h1 className="display-4 text-white animated slideInDown">

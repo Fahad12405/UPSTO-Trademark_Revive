@@ -45,9 +45,7 @@ const renderCard = (image, title, description, price) => (
       </Typography>
     </CardContent>
     <CardActions sx={{ marginBottom: 1 }}>
-      <Button size="small" variant="contained" color="primary">
-        Register Now
-      </Button>
+      
     </CardActions>
   </Card>
 );
@@ -60,34 +58,35 @@ return (
     
     <Header name="Logo Design Service" onButtonClick={handleButtonClick} />
   {/* Cards section */}
-<Container sx={{ py: 4 }}> {/* Optional Container for spacing */}
+  <Container sx={{ py: 4 }}> {/* Optional Container for spacing */}
   <Grid container spacing={2} justifyContent="center"> {/* Use Grid to align items horizontally */}
     <Grid item xs={12} sm={6} md={4}> {/* Each card occupies 4 columns on medium screens */}
       {renderCard(
-        "/img/cat-2.jpg",  // Change this to your actual logo design image path
-        "Get a Logo that Speaks for Your Brand",
-        "Handling every aspect of logo creation, from concept to finalization, ensuring a polished result. Support team is available to address any inquiries or issues. If revisions are needed, we act swiftly to make adjustments, ensuring minimal disruption to your timeline. Invest in a logo that captures the essence of your brand, and consider protecting it with a trademark to secure your business's future success.",
+        "/img/office logos-04.png",  // Update this to the actual logo design image path
+        "Unique Brand Identity with Logo Design",
+        "Trademark Revive creates impactful logos that reflect your brand’s personality. Our designers craft visuals that communicate your brand’s essence, setting it apart from competitors. Enjoy a streamlined process with full support and rapid revisions if needed.",
         "$99.00"
       )}
     </Grid>
     <Grid item xs={12} sm={6} md={4}>
       {renderCard(
-        "/img/cat-4.jpg",  // Change this to your actual logo design image path
-        "Get a Logo that Speaks for Your Brand",
-        "Handling every aspect of logo creation, from concept to finalization, ensuring a polished result. Support team is available to address any inquiries or issues. If revisions are needed, we act swiftly to make adjustments, ensuring minimal disruption to your timeline. Invest in a logo that captures the essence of your brand, and consider protecting it with a trademark to secure your business's future success.",
+        "/img/office logos-05.png",  // Update this to the actual logo design image path
+        "Stand Out with Professional Logo Design",
+        "Create a lasting impression with a professionally designed logo that encapsulates your brand’s mission and values. Trademark Revive’s team ensures each design element speaks directly to your target audience and business goals.",
         "$99.00"
       )}
     </Grid>
     <Grid item xs={12} sm={6} md={4}>
       {renderCard(
-        "/img/cat-1.jpg",  // Change this to your actual logo design image path
-        "Get a Logo that Speaks for Your Brand",
-        "Handling every aspect of logo creation, from concept to finalization, ensuring a polished result. Support team is available to address any inquiries or issues. If revisions are needed, we act swiftly to make adjustments, ensuring minimal disruption to your timeline. Invest in a logo that captures the essence of your brand, and consider protecting it with a trademark to secure your business's future success.",
+        "/img/office logos-13 (1).png",  // Update this to the actual logo design image path
+        "Secure Your Brand with a Distinctive Logo",
+        "Trademark Revive offers a comprehensive logo design service to visually define your business. Each logo is crafted with a strategic approach, ensuring your brand’s visual presence is impactful, memorable, and ready for trademark protection.",
         "$99.00"
       )}
     </Grid>
   </Grid>
 </Container>
+
 
     
       <Service />

@@ -10,7 +10,7 @@ export default function Testimonial() {
             <h6 className="section-title bg-white text-center text-primary px-3">
               Customer Reviews & Testimonials
             </h6>
-            <h1 className="mb-5">See why others are choosing Trademark Genius!</h1>
+            <h1 className="mb-5">See why others are choosing Trademark Revive!</h1>
           </div>
 
           <div id="carouselExampleCaptions" className="carousel slide">
@@ -18,31 +18,31 @@ export default function Testimonial() {
               <div className="carousel-item active testimonial-item text-center">
                 <img
                   className="border rounded-circle p-2 mx-auto mb-3"
-                  src="/img/testimonial-1.jpg"
+                  src="/img/team-1.jpg"
                   style={{ width: "80px", minHeight: "80px" }}
                   alt="Mark D"
                 />
                 <h5 className="mb-0">Mark D</h5>
-                <p>Reviewed Trademark Genius</p>
+                <p>Reviewed Trademark Revive</p>
                 <div className="testimonial-text bg-light text-center p-4">
                   <p className="mb-0">
-                    Trademark Genius helped register my company's trademark. The process was simple, their customer service was excellent, and my trademark was registered without any issues. Highly recommend Trademark Genius.
+                    Trademark Revive made my trademark registration effortless. The entire process was straightforward, and their customer service was top-notch. I highly recommend Trademark Revive!
                   </p>
                 </div>
               </div>
 
               <div className="carousel-item text-center">
                 <img
-                  src="/img/testimonial-2.jpg"
+                  src="/img/testimonial-1.jpg"
                   className="d-block border rounded-circle p-2 mx-auto mb-3"
                   alt="Kelly T"
                   style={{ width: "80px", minHeight: "80px" }}
                 />
                 <h5 className="mb-0">Kelly T</h5>
-                <p>Reviewed Trademark Genius</p>
+                <p>Reviewed Trademark Revive</p>
                 <div className="testimonial-text bg-light text-center p-4">
                   <p className="mb-0">
-                    I contacted Trademark Genius after running into many issues trying to register my company's trademark myself. They helped solve every issue I ran into. Would definitely recommend spending the money to have professionals handle this process.
+                    I faced numerous challenges while trying to register my company's trademark. Trademark Revive stepped in and resolved every issue. I strongly recommend their professional services!
                   </p>
                 </div>
               </div>
@@ -55,26 +55,26 @@ export default function Testimonial() {
                   style={{ width: "80px", minHeight: "80px" }}
                 />
                 <h5 className="mb-0">Terry F</h5>
-                <p>Reviewed Trademark Genius</p>
+                <p>Reviewed Trademark Revive</p>
                 <div className="testimonial-text bg-light text-center p-4">
                   <p className="mb-0">
-                    Got my trademark registered with USPTO without any issues. Their dashboard is a great tool and helped me track the progress of my application all the way to completion. Will use them again for any other TM needs.
+                    I successfully registered my trademark with the help of Trademark Revive. Their user-friendly dashboard allowed me to track my application seamlessly. I’ll definitely use their services again!
                   </p>
                 </div>
               </div>
 
               <div className="carousel-item text-center">
                 <img
-                  src="/img/testimonial-4.jpg"
+                  src="/img/team-3.jpg"
                   className="d-block border rounded-circle p-2 mx-auto mb-3"
                   alt="Devin M"
                   style={{ width: "80px", minHeight: "80px" }}
                 />
                 <h5 className="mb-0">Devin M</h5>
-                <p>Reviewed Trademark Genius</p>
+                <p>Reviewed Trademark Revive</p>
                 <div className="testimonial-text bg-light text-center p-4">
                   <p className="mb-0">
-                    My experience with TMG was great. Their customer service team was friendly and helpful. The process was quick & simple. Thanks!
+                    My experience with Trademark Revive was excellent. The team was friendly and efficient. The trademark registration process was quick and hassle-free. Thank you!
                   </p>
                 </div>
               </div>
@@ -87,26 +87,26 @@ export default function Testimonial() {
                   style={{ width: "80px", minHeight: "80px" }}
                 />
                 <h5 className="mb-0">Lisa N</h5>
-                <p>Reviewed Trademark Genius</p>
+                <p>Reviewed Trademark Revive</p>
                 <div className="testimonial-text bg-light text-center p-4">
                   <p className="mb-0">
-                    My trademark registration was a unique situation that required some extra work, the team helped guide me through this daunting process and got my application submitted to USPTO (and was approved without issues). Thanks TMG!
+                    I had a unique trademark registration situation that required extra guidance. The Trademark Revive team walked me through every step and helped me submit my application to the USPTO successfully. Thanks, Trademark Revive!
                   </p>
                 </div>
               </div>
 
               <div className="carousel-item text-center">
                 <img
-                  src="/img/testimonial-2.jpg"
+                  src="/img/testimonial-4.jpg"
                   className="d-block border rounded-circle p-2 mx-auto mb-3"
-                  alt="Marshall N"
+                  alt="Sarah N"
                   style={{ width: "80px", minHeight: "80px" }}
                 />
                 <h5 className="mb-0">Marshall N</h5>
-                <p>Reviewed Trademark Genius</p>
+                <p>Reviewed Trademark Revive</p>
                 <div className="testimonial-text bg-light text-center p-4">
                   <p className="mb-0">
-                    Great experience with Trademark Genius. They were knowledgeable, quick, and accurate. Helped iron out a few issues the USPTO was giving my application. I’d definitely use them again.
+                    I had a great experience with Trademark Revive. Their team was knowledgeable, responsive, and helped resolve a few issues with my application. I would definitely choose them again for future needs.
                   </p>
                 </div>
               </div>

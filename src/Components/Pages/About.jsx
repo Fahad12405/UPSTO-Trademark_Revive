@@ -14,7 +14,7 @@ export default function About() {
         <div className="position-relative h-100">
           <img
             className="img-fluid position-absolute w-100 h-100"
-            src="/img/about.jpg"
+            src="/img/home-image-1.png"
             alt="about trademark"
             style={{ objectFit: "cover" }}
           />
