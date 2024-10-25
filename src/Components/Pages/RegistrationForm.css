@@ -357,7 +357,105 @@ p {
         margin: 5px 1%; /* Margin for spacing */
         box-sizing: border-box;
     }
+
 }
+
+
+
+
+
+
+
+/* Media Queries for screens smaller than 320px */
+@media (max-width: 280px) {
+    .form-container {
+        padding: 0px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .multi-step-form {
+        padding: 3px; /* Smaller padding */
+        width: 100%;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Even smaller heading */
+        margin-bottom: 8px; /* Reduced margin */
+    }
+
+    .step-content {
+        margin-bottom: 10px;
+        border-radius: 10px; /* Smaller border-radius */
+        width: 100%;
+    }
+
+    .checkbox-group,
+    .radio-group {
+        padding: 8px; /* Reduced padding for smaller screens */
+        width: 100%;
+    }
+
+    .input-label {
+        margin-bottom: 12px;
+    }
+
+    /* Small Text Description */
+    .small-text {
+        font-size: 10px; /* Even smaller text */
+        margin-bottom: 6px;
+    }
+
+    /* Textarea Input */
+    .logo-description-input {
+        padding: 6px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    /* Error Message */
+    .error-message {
+        font-size: 0.7rem;
+    }
+
+    /* Continue Button */
+    .continue-button {
+        padding: 8px;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    /* Navigation Buttons */
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        width: 48%;
+        margin: 4px 1%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Step 3 Styles */
 .step-content {
