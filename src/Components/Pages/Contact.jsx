@@ -3,6 +3,10 @@
   import Swal from "sweetalert2"; // Import SweetAlert2
   import "../../assets/lib/animate/animate.css";
   import "../../assets/lib/animate/animate.min.css";
+  import "animate.css"
+  import WOW from 'wow.js';
+new WOW().init();
+
 
 
 
