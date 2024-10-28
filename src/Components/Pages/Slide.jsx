@@ -1,32 +1,32 @@
 import React from "react";
 import "../../assets/css/Slide.css";
-import { Link } from "react-router-dom";
 import FormButton from "./FormButton";
 
 export default function Slide({ onButtonClick }) {
   const slides = [
     {
-      image: "/img/carousel-3.jpg",
+      image: "/img/carousel-3-small.jpg", // Default for smaller screens
+      srcSet: "/img/carousel-3-small.jpg 480w, /img/carousel-3-medium.jpg 800w, /img/carousel-3-large.jpg 1200w",
       heading: "File Your Trademark Online",
       subheading: "Official USPTO Registration Process",
-      description:
-        "Protect Your Brand Today. Already know your Trademark is available?",
+      description: "Protect Your Brand Today. Already know your Trademark is available?",
     },
     {
-      image: "/img/carousel-2.jpg",
+      image: "/img/carousel-2-small.jpg", // Default for smaller screens
+      srcSet: "/img/carousel-2-small.jpg 480w, /img/carousel-2-medium.jpg 800w, /img/carousel-2-large.jpg 1200w",
       heading: "Trademark Monitoring Service",
       subheading: "Protect Your Trademark from Infringements",
-      description:
-        "Get notified of any potential infringements and take action immediately.",
+      description: "Get notified of any potential infringements and take action immediately.",
     },
     {
-      image: "/img/carousel-4.jpg",
+      image: "/img/carousel-4-small.jpg", // Default for smaller screens
+      srcSet: "/img/carousel-4-small.jpg 480w, /img/carousel-4-medium.jpg 800w, /img/carousel-4-large.jpg 1200w",
       heading: "Cease & Desist Services",
       subheading: "Safeguard Your Brand Effectively",
-      description:
-        "We help you handle cease & desist letters to protect your brand legally.",
+      description: "We help you handle cease & desist letters to protect your brand legally.",
     },
   ];
+
 
   return (
     <>
