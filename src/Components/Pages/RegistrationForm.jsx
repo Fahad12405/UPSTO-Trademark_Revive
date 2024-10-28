@@ -2,88 +2,94 @@ import React, { useState } from "react";
 import './RegistrationForm.css'; // Import your CSS file for styles
 import { Controller, useForm } from "react-hook-form";
 import { Button } from "@mui/material";
-import { loadStripe } from "@stripe/stripe-js";
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2'; // Import SweetAlert
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
   const { register, handleSubmit, control, formState: { errors }, watch, trigger } = useForm();
-  const [selectedPackageDetails, setSelectedPackageDetails] = useState({ type: '', price: '' });
+  const [selectedPackageDetails, setSelectedPackageDetails] = useState({ type: '', price: '', description: '' });
 
   const getPackageDetails = (type) => {
     if (type === 'basic') {
       return {
         plan: 'basic',
         price: 99,
-        description: `
-          14 day processing time.
-          We will complete your search within 14 business days, and file the application after you have approved it.
-          100% Satisfaction Guaranteed.`,
+        description: '14 day processing time. We will complete your search within 14 business days, and file the application after you have approved it. 100% Satisfaction Guaranteed.',
       };
     }
     if (type === 'standard') {
       return {
         plan: 'standard',
         price: 199,
-        description: `
-          Cease & Desist Letter.
-          1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.
-          100% Satisfaction Guaranteed.`,
+        description: 'Cease & Desist Letter. 1 Month of free trademark monitoring included to ensure no infringements on your mark are filed. 100% Satisfaction Guaranteed.',
       };
     }
     if (type === 'premier') {
       return {
         plan: 'premier',
         price: 299,
-        description: `
-          Handle Additional Filings.
-          60% of trademark applications require additional filings for approval. We handle additional filings.
-          100% Satisfaction Guaranteed.`,
+        description: 'Handle Additional Filings. 60% of trademark applications require additional filings for approval. We handle additional filings. 100% Satisfaction Guaranteed.',
       };
     }
     return {};
   };
+  
 
-
-  // Watch for selected protection type (name, slogan, logo)
   const protectionType = watch("protectionType");
 
   const nextStep = async () => {
-    // Trigger validation for the current step
-    const valid = await trigger();
+    const valid = await trigger(); // Validate the current step inputs
     if (valid) {
-      setStep(step + 1);
+      setStep(prevStep => prevStep + 1); // Update step state correctly
+    } else {
+      console.log('Validation errors:', errors); // Log errors for debugging
     }
   };
 
   const prevStep = () => setStep(step - 1);
 
-  // Single onValid function for both form submission and Stripe payment
-  const onValid = async (data) => {
-    const selectedPackage = data.packageType;
-    const selectedPackagePrice = getPackageDetails(selectedPackage);
-    console.log(selectedPackagePrice)
-    // Save the package details in a variable
-    setSelectedPackageDetails(selectedPackagePrice);
-
-    // console.log("Selected Package:", selectedPackageDetails);
-
+  const onValid = (data) => {
     if (step === 5) {
-      // console.log(data);
-      await createCheckoutSession(data);  // Create a checkout session for Stripe payment
+      sendEmail(data); // Send email when form is submitted at the last step
     } else {
       nextStep();
     }
   };
 
+  const sendEmail = (data) => {
+    // Destructure the necessary fields from data
+    const {
+      protectionType,
+      nameToProtect,
+      livingPerson,
+      foreignWords,
+      trademarkUsage,
+      logoDescription,
+      logoFile,
+      colorProtection,
+      ownerType,
+      firstName,
+      lastName,
+      address,
+      city,
+      state,
+      postalCode,
+      email,
+      phone,
+      sellingType,
+      goodsServicesDescription,
+      packageType // Get the selected package type
+    } = data;
 
+    // Get the selected package details based on packageType
+    const selectedPackage = getPackageDetails(packageType);
+    setSelectedPackageDetails(selectedPackage); // Update state with selected package details
 
+    // Log selected package details for debugging
+    console.log("Selected Package on Submit:", selectedPackage);
 
-
-  const createCheckoutSession = async (data) => {
-
-    // console.log(data)
-    const { protectionType, nameToProtect, livingPerson, foreignWords, trademarkUsage, logoDescription, logoFile, colorProtection, ownerType, firstName, lastName, address, city, state, postalCode, email, phone, sellingType, goodsServicesDescription } = data;
-
+    // Combine data and selected package details for email
     const formData = {
       protectionType,
       nameToProtect,
@@ -104,210 +110,207 @@ const RegistrationForm = () => {
       phone,
       sellingType,
       goodsServicesDescription,
-      selectedPakeges: selectedPackageDetails
-    }
-    console.log("formData=>", formData)
-    console.log("selectedPackageDetails=>", selectedPackageDetails)
-    try {
-      const response = await fetch('http://localhost:7100/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({formData}), // Pass package details in body
+      selectedPackage: {
+        type: selectedPackage.plan, // Package type
+        price: selectedPackage.price, // Package price
+        description: selectedPackage.description, // Package description
+      },
+    };
+
+    // Log the formData to see what's being sent
+    console.log("Sending email with the following data:", formData);
+
+    emailjs.send(
+      'service_0l5hyz5',
+      'template_556v7h8',
+      formData,
+      'MoyHHg2UuMHrvHDbg'
+    )
+    .then((result) => {
+      console.log("Email sent successfully:", result.text);
+      // Show success alert with SweetAlert
+      Swal.fire({
+        title: 'Success!',
+        text: 'Your form has been successfully submitted!',
+        icon: 'success',
+        confirmButtonText: 'OK'
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to create checkout session');
-      }
-
-      const sessionData = await response.json();
-      console.log('Session ID:', sessionData.id);
-
-      // Load Stripe.js and redirect to the Stripe checkout page
-      const stripe = await loadStripe('pk_test_51Q5CQjBSRlxFwzyWZZr67eMkwml3WUCZdRg4bcW5mtBx1NffoI3wDxNJ7QPAzEVUczP8ntAnMPmlDYeTyWEBpjl100xLHDUUps'); // Replace with your own Stripe publishable key
-
-
-
-      const { error } = await stripe.redirectToCheckout({
-        sessionId: sessionData.id, // Pass the session ID from the backend
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Failed to send email. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
       });
-
-      if (error) {
-        console.error('Error redirecting to checkout:', error);
-      }
-    } catch (error) {
-      console.error('Error creating checkout session:', error);
-    }
-
+    });
   };
 
+    return (
+      <div className="form-container">
+        <form onSubmit={handleSubmit(onValid)} className="multi-step-form">
 
-
-  return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit(onValid)} className="multi-step-form">
-
-        {step === 1 && (
-          <div className="step-content">
-            <h2>Select What You Are Trying to Protect</h2>
-            <div className="checkbox-group">
-              <label>
-                <input
-                  type="radio"
-                  {...register("protectionType", { required: "At least one option must be selected" })}
-                  value="name"
-                />
-                Name
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  {...register("protectionType")}
-                  value="slogan"
-                />
-                Slogan
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  {...register("protectionType")}
-                  value="logo"
-                />
-                Logo
-              </label>
-              {errors.protectionType && <p className="error-message">{errors.protectionType.message}</p>}
-            </div>
-
-            {protectionType === "logo" && (
-              <div className="logo-section">
-                <p className="small-text">
-                  Please provide a complete and accurate description of your logo, including any words that may appear in the logo.
-                  An example of a description is: ‘a red cat wrapped around a blue outline of a globe’.
-                  Leave out the colors if you want to protect your logo in all colors.
-                </p>
-                <div className="input-label">
-                  <textarea
-                    {...register("logoDescription", { required: "Logo description is required" })}
-                    placeholder="Enter your logo description"
-                    rows="4"
-                    className="logo-description-input"
-                  />
-                  {errors.logoDescription && <p className="error-message">{errors.logoDescription.message}</p>}
-                </div>
-
-                <div className="radio-group">
-                  <span>Do you want to be able to protect your logo in a variety of colors?</span>
-                  <label>
-                    <input
-                      type="radio"
-                      {...register("colorProtection", { required: "Please select an option" })}
-                      value="yes"
-                    />
-                    Yes
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      {...register("colorProtection")}
-                      value="no"
-                    />
-                    No
-                  </label>
-                  {errors.colorProtection && <p className="error-message">{errors.colorProtection.message}</p>}
-                </div>
-
-                <div className="input-label">
-                  <span>Upload logo file</span>
+          {step === 1 && (
+            <div className="step-content">
+              <h2>Select What You Are Trying to Protect</h2>
+              <div className="checkbox-group">
+                <label>
                   <input
-                    type="file"
-                    {...register("logoFile", { required: "Please upload a logo file" })}
+                    type="radio"
+                    {...register("protectionType", { required: "At least one option must be selected" })}
+                    value="name"
                   />
-                  {errors.logoFile && <p className="error-message">{errors.logoFile.message}</p>}
-                </div>
+                  Name
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("protectionType")}
+                    value="slogan"
+                  />
+                  Slogan
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("protectionType")}
+                    value="logo"
+                  />
+                  Logo
+                </label>
+                {errors.protectionType && <p className="error-message">{errors.protectionType.message}</p>}
               </div>
-            )}
 
-            <div className="input-label">
-              <span>Enter the name you wish to protect</span>
-              <input
-                type="text"
-                {...register("nameToProtect", { required: "Name is required" })}
-                placeholder="Enter the name"
-              />
-              {errors.nameToProtect && <p className="error-message">{errors.nameToProtect.message}</p>}
+              {protectionType === "logo" && (
+                <div className="logo-section">
+                  <p className="small-text">
+                    Please provide a complete and accurate description of your logo, including any words that may appear in the logo.
+                    An example of a description is: ‘a red cat wrapped around a blue outline of a globe’.
+                    Leave out the colors if you want to protect your logo in all colors.
+                  </p>
+                  <div className="input-label">
+                    <textarea
+                      {...register("logoDescription", { required: "Logo description is required" })}
+                      placeholder="Enter your logo description"
+                      rows="4"
+                      className="logo-description-input"
+                    />
+                    {errors.logoDescription && <p className="error-message">{errors.logoDescription.message}</p>}
+                  </div>
+
+                  <div className="radio-group">
+                    <span>Do you want to be able to protect your logo in a variety of colors?</span>
+                    <label>
+                      <input
+                        type="radio"
+                        {...register("colorProtection", { required: "Please select an option" })}
+                        value="yes"
+                      />
+                      Yes
+                    </label>
+                    <label>
+                      <input
+                        type="radio"
+                        {...register("colorProtection")}
+                        value="no"
+                      />
+                      No
+                    </label>
+                    {errors.colorProtection && <p className="error-message">{errors.colorProtection.message}</p>}
+                  </div>
+
+                  <div className="input-label">
+                    <span>Upload logo file</span>
+                    <input
+                      type="file"
+                      {...register("logoFile", { required: "Please upload a logo file" })}
+                    />
+                    {errors.logoFile && <p className="error-message">{errors.logoFile.message}</p>}
+                  </div>
+                </div>
+              )}
+
+              <div className="input-label">
+                <span>Enter the name you wish to protect</span>
+                <input
+                  type="text"
+                  {...register("nameToProtect", { required: "Name is required" })}
+                  placeholder="Enter the name"
+                />
+                {errors.nameToProtect && <p className="error-message">{errors.nameToProtect.message}</p>}
+              </div>
+
+              <div className="radio-group">
+                <span>Does your mark include a living person’s name?</span>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("livingPerson", { required: "Please select an option" })}
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("livingPerson")}
+                    value="no"
+                  />
+                  No
+                </label>
+                {errors.livingPerson && <p className="error-message">{errors.livingPerson.message}</p>}
+              </div>
+
+              <div className="radio-group">
+                <span>Does your mark include any words other than English?</span>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("foreignWords", { required: "Please select an option" })}
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("foreignWords")}
+                    value="no"
+                  />
+                  No
+                </label>
+                {errors.foreignWords && <p className="error-message">{errors.foreignWords.message}</p>}
+              </div>
+
+              <div className="radio-group">
+                <span>Are you currently using this trademark in your business?</span>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("trademarkUsage", { required: "Please select an option" })}
+                    value="yes"
+                  />
+                  Yes
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    {...register("trademarkUsage")}
+                    value="no"
+                  />
+                  No
+                </label>
+                {errors.trademarkUsage && <p className="error-message">{errors.trademarkUsage.message}</p>}
+              </div>
+
+              <p>If you do not have proof now, you can submit proof later after your trademark is submitted to the Trademark office. If you do it later, you will need to pay a $100 government fee (for US trademarks).</p>
+
+              <button type="button" onClick={nextStep} className="continue-button">
+                Continue
+              </button>
             </div>
-
-            <div className="radio-group">
-              <span>Does your mark include a living person’s name?</span>
-              <label>
-                <input
-                  type="radio"
-                  {...register("livingPerson", { required: "Please select an option" })}
-                  value="yes"
-                />
-                Yes
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  {...register("livingPerson")}
-                  value="no"
-                />
-                No
-              </label>
-              {errors.livingPerson && <p className="error-message">{errors.livingPerson.message}</p>}
-            </div>
-
-            <div className="radio-group">
-              <span>Does your mark include any words other than English?</span>
-              <label>
-                <input
-                  type="radio"
-                  {...register("foreignWords", { required: "Please select an option" })}
-                  value="yes"
-                />
-                Yes
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  {...register("foreignWords")}
-                  value="no"
-                />
-                No
-              </label>
-              {errors.foreignWords && <p className="error-message">{errors.foreignWords.message}</p>}
-            </div>
-
-            <div className="radio-group">
-              <span>Are you currently using this trademark in your business?</span>
-              <label>
-                <input
-                  type="radio"
-                  {...register("trademarkUsage", { required: "Please select an option" })}
-                  value="yes"
-                />
-                Yes
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  {...register("trademarkUsage")}
-                  value="no"
-                />
-                No
-              </label>
-              {errors.trademarkUsage && <p className="error-message">{errors.trademarkUsage.message}</p>}
-            </div>
-
-            <p>If you do not have proof now, you can submit proof later after your trademark is submitted to the Trademark office. If you do it later, you will need to pay a $100 government fee (for US trademarks).</p>
-
-            <button type="button" onClick={nextStep} className="continue-button">
-              Continue
-            </button>
-          </div>
-        )}
+          )}
 
         {step === 2 && (
           <div className="step-content">
@@ -481,120 +484,113 @@ const RegistrationForm = () => {
           </div>
         )}
 
-        {step === 3 && (
-          <div className="step-content">
-            <h2>Choose Your Trademark Class</h2>
-            <p>
-              Start describing the goods and services related to your mark. Trademark Genius compares the description you provide and automatically provides descriptions from the USPTO ID Manual for your consideration.
-            </p>
+{step === 3 && (
+  <div className="step-content">
+    <h2>Choose Your Trademark Class</h2>
+    <p>
+      Start describing the goods and services related to your mark. Trademark Genius compares the description you provide and automatically provides descriptions from the USPTO ID Manual for your consideration.
+    </p>
 
-            <div className="input-label">
-              <span>Do you sell, or intend to sell, goods or services?</span>
-              <div className="radio-group">
-                <label>
-                  <input
-                    type="radio"
-                    value="goods"
-                    {...register("sellingType", { required: "This field is required" })}
-                  />
-                  Goods
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="services"
-                    {...register("sellingType", { required: "This field is required" })}
-                  />
-                  Services
-                </label>
-              </div>
-              {errors.sellingType && <p className="error-message">{errors.sellingType.message}</p>}
-            </div>
+    <div className="input-label">
+      <span>Do you sell, or intend to sell, goods or services?</span>
+      <div className="radio-group">
+        <label htmlFor="goods">
+          <input
+            type="radio"
+            id="goods"
+            value="goods"
+            {...register("sellingType", { required: "This field is required" })}
+          />
+          Goods
+        </label>
+        <label htmlFor="services">
+          <input
+            type="radio"
+            id="services"
+            value="services"
+            {...register("sellingType", { required: "This field is required" })}
+          />
+          Services
+        </label>
+      </div>
+      {errors.sellingType && <p className="error-message">{errors.sellingType.message}</p>}
+    </div>
 
-            <div className="input-label">
-              <span>Please provide a description of your goods or services</span>
-              <textarea
-                {...register("goodsServicesDescription", { required: "This field is required" })}
-                placeholder="Describe the goods/services"
-                rows="4"
-              />
-              {errors.goodsServicesDescription && <p className="error-message">{errors.goodsServicesDescription.message}</p>}
-            </div>
+    <div className="input-label">
+      <span>Please provide a description of your goods or services</span>
+      <textarea
+        {...register("goodsServicesDescription", { required: "This field is required" })}
+        placeholder="Describe the goods/services"
+        rows="4"
+      />
+      {errors.goodsServicesDescription && <p className="error-message">{errors.goodsServicesDescription.message}</p>}
+    </div>
 
-            <button type="button" onClick={prevStep} className="prev-button">
-              Back
-            </button>
-            <button type="button" onClick={handleSubmit(onValid)} className="continue-button">
-              Continue
-            </button>
-          </div>
-        )}
-
+    <button type="button" onClick={prevStep} className="prev-button">
+      Back
+    </button>
+    <button type="button" onClick={handleSubmit(onValid)} className="continue-button">
+      Continue
+    </button>
+  </div>
+)}
 {step === 4 && (
   <div className="step-content">
     <h2>Choose a Package</h2>
     <p>
-      All packages include lifetime customer support and our 100% satisfaction guaranteed.
+      All packages include lifetime customer support and our 100% satisfaction guarantee.
     </p>
 
     <div className="package-selection">
-      {['basic', 'standard', 'premier'].map((type) => (
-        <div className="package-card" key={type}>
-          <div className="package-header">
-            <h3 style={{ color: '#1976d2', fontWeight: 'bold' }}>
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </h3>
-            <p>
-              {type === 'basic' && '$99'}
-              {type === 'standard' && '$199'}
-              {type === 'premier' && '$299'}
-            </p>
+      {['basic', 'standard', 'premier'].map((type) => {
+        const packageDetails = getPackageDetails(type); // Get package details
+
+        return (
+          <div className="package-card" key={type}>
+            <div className="package-header">
+              <h3 style={{ color: '#1976d2', fontWeight: 'bold' }}>
+                {type.charAt(0).toUpperCase() + type.slice(1)} {/* Capitalizes the package name */}
+              </h3>
+              <p>${packageDetails.price}</p> {/* Display the package price */}
+            </div>
+            <div className="package-details">
+              <p>{packageDetails.description}</p> {/* Package description */}
+              <p>100% Satisfaction Guaranteed</p>
+            </div>
+            <div className="package-selection-control">
+              <Controller
+                control={control} // Ensure 'control' is passed to the Controller
+                name="packageType"
+                rules={{ required: "Please select a package" }} // Validation rule
+                render={({ field }) => (
+                  <label>
+                    <input
+                      type="radio"
+                      value={type}
+                      checked={field.value === type} // Check if the current package is selected
+                      onChange={() => {
+                        field.onChange(type); // Update the form state
+                        setSelectedPackageDetails({
+                          type, // Package type
+                          price: packageDetails.price, // Set package price
+                          description: packageDetails.description, // Set package description
+                        });
+                      }} // Update the selected package details when clicked
+                    />
+                    Select
+                  </label>
+                )}
+              />
+            </div>
           </div>
-          <div className="package-details">
-            <p>
-              {type === 'basic' && '14 day processing time'}
-              {type === 'standard' && 'Cease & Desist Letter'}
-              {type === 'premier' && 'Handle Additional Filings'}
-            </p>
-            <p>
-              {type === 'basic' && 'We will complete your search within 14 business days, and file the application after you have approved it.'}
-              {type === 'standard' && '1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.'}
-              {type === 'premier' && '60% of trademark applications require additional filings for approval. We handle additional filings.'}
-            </p>
-            <p>100% Satisfaction Guaranteed</p>
-          </div>
-          <div className="package-selection-control">
-            <Controller
-              control={control}
-              name="packageType"
-              rules={{ required: "Please select a package" }}
-              render={({ field }) => (
-                <label>
-                  <input
-                    type="radio"
-                    value={type || ""}
-                    checked={field.value === type} // Ensures correct radio button selection
-                    onChange={() => {
-                      field.onChange(type);
-                      const packageDetails = getPackageDetails(type);
-                      setSelectedPackageDetails({
-                        type,
-                        price: packageDetails.price,
-                        description: packageDetails.description
-                      });
-                    }} // Update form state when clicked
-                  />
-                  Select
-                </label>
-              )}
-            />
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
 
-    {/* Error message for package selection */}
-    {errors.packageType && <p className="error-message">{errors.packageType.message}</p>}
+    {/* Display error message for package selection if any */}
+    {errors.packageType && (
+      <p className="error-message">{errors.packageType.message}</p>
+    )}
 
     <div style={{ marginTop: '20px' }}>
       <button type="button" onClick={prevStep} className="prev-button">
@@ -610,51 +606,46 @@ const RegistrationForm = () => {
 
 
 
-        {step === 5 && (
-          <div className="step-content">
-            {/* Rush Processing Section */}
-            <h2>Add Rush Processing to Expedite Your Application</h2>
 
-            <div className="rush-content">
-              <h3>You’re nearly finished!</h3>
-              <h4>Do you need your order processed faster?</h4>
 
-              <div className="rush-description">
-                <strong>RUSH PROCESSING.</strong> COMPLETED NEXT DAY WHEN TIME IS OF THE ESSENCE.
-                <p>
-                  We know time is critical. With Rush Processing, we will complete your search results by the next business day, and file the application immediately after you have approved it.
-                </p>
-              </div>
-              <div className="input-label">
-                <label>
-                  <input type="checkbox" {...register("rushProcessing")} />
-                  24-hour Expedited Processing (Next Business Day): $49.00 USD
-                </label>
-              </div>
 
+
+ 
+
+
+{/* Step 5 */}
+{step === 5 && (
+        <div className="step-content">
+          {/* Rush Processing Section */}
+          <h2>Add Rush Processing to Expedite Your Application</h2>
+
+          <div className="rush-content">
+            <h3>You’re nearly finished!</h3>
+            <h4>Do you need your order processed faster?</h4>
+
+            <div className="rush-description">
+              <strong>RUSH PROCESSING.</strong> COMPLETED NEXT DAY WHEN TIME IS OF THE ESSENCE.
+              <p>
+                We know time is critical. With Rush Processing, we will complete your search results by the next business day, and file the application immediately after you have approved it.
+              </p>
             </div>
-
-            <button type="button" onClick={prevStep} className="prev-button">
-              Back
-            </button>
-            <Button type="submit" variant="contained" color="secondary"  >Submit</Button>
-
+            <div className="input-label">
+              <label>
+                <input type="checkbox" {...register("rushProcessing")} />
+                24-hour Expedited Processing (Next Business Day): $49.00 USD
+              </label>
+            </div>
           </div>
-        )}
 
-
-
-
-
-
-
-
-
-
-
-
-
-      </form>
+          <button type="button" onClick={prevStep} className="prev-button">
+            Back
+          </button>
+          <Button type="submit" variant="contained" color="secondary">
+            Submit
+          </Button>
+        </div>
+      )}
+    </form>
     </div>
   );
 };

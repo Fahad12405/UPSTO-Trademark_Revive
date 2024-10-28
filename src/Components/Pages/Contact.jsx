@@ -1,33 +1,41 @@
-import React from "react";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2"; // Import SweetAlert2
 
 export default function Contact() {
-  const [result, setResult] = React.useState("");
-
-  const onHCaptchaChange = (token) => {
-    setValue("h-captcha-response", token);
-  };
+  const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
-    formData.append("access_key", "b9fd69e0-c307-4f57-b90f-9c4106746fcb");
+    setResult("Sending...");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
+    emailjs
+      .sendForm(
+        "service_0l5hyz5", // Replace with your Email.js service ID
+        "template_zlsefcu", // Replace with your Email.js template ID
+        event.target,
+        "MoyHHg2UuMHrvHDbg"   // Replace with your Email.js public key
+      )
+      .then(
+        (response) => {
+          Swal.fire({
+            title: "Success!",
+            text: "Your message has been sent successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+          event.target.reset(); // Reset the form after submission
+        },
+        (error) => {
+          Swal.fire({
+            title: "Oops...",
+            text: "Something went wrong. Please try again later.",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+          console.error("Error:", error);
+        }
+      );
   };
 
   return (
@@ -57,7 +65,6 @@ export default function Contact() {
             <p className="mb-4">
               We value your time and aim to respond to your inquiries as quickly as possible.
             </p>
-           
           </div>
 
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s d-flex flex-column">
@@ -68,10 +75,8 @@ export default function Contact() {
               style={{ height: "100%", maxHeight: "450px", objectFit: "cover" }} // Adjust height as needed
             />
           </div>
-          <div className="col-lg-4 col-md-12 wow fadeInUp d-flex flex-column" data-wow-delay="0.5s" style={{ height: "100%" }}>
+          <div className="col-lg-4 col-md-12 wow fadeInUp d-flex flex-column" data-wow-delay="0.5s">
             <form onSubmit={onSubmit} style={{ flex: "1" }}>
-              <input type="hidden" name="from_name" value="eLearning" />
-
               <div className="row g-3">
                 <div className="col-md-12">
                   <div className="form-floating">
@@ -79,7 +84,6 @@ export default function Contact() {
                       type="text"
                       className="form-control"
                       name="name"
-                      id="name"
                       placeholder="Your Name"
                       required
                     />
@@ -91,7 +95,6 @@ export default function Contact() {
                     <input
                       type="email"
                       className="form-control"
-                      id="email"
                       name="email"
                       placeholder="Your Email"
                       required
@@ -104,12 +107,11 @@ export default function Contact() {
                     <input
                       type="number"
                       className="form-control"
-                      id="phone"
                       name="phone"
                       placeholder="Mobile No"
                       required
                     />
-                    <label htmlFor="subject">Mobile No</label>
+                    <label htmlFor="phone">Mobile No</label>
                   </div>
                 </div>
                 <div className="col-md-12">
@@ -117,20 +119,13 @@ export default function Contact() {
                     <textarea
                       className="form-control"
                       placeholder="Leave a message here"
-                      id="message"
                       name="message"
                       style={{ height: "150px" }}
-                      defaultValue={""}
+                      required
                     />
                     <label htmlFor="message">Message</label>
                   </div>
                 </div>
-                <input
-                  type="hidden"
-                  name="subject"
-                  value="New Submission from contact page"
-                />
-
                 <div className="col-12">
                   <button className="btn btn-primary w-100 py-3" type="submit">
                     Send Message

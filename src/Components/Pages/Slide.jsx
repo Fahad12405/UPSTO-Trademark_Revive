@@ -1,10 +1,30 @@
 import React from "react";
-import "../../assets/css/Slide.css"; // Ensure your CSS has rules for reduced height
+import "../../assets/css/Slide.css";
 import { Link } from "react-router-dom";
 import FormButton from "./FormButton";
-import { Padding } from "@mui/icons-material";
 
-export default function Slide({ onButtonClick }) { // Accepting the prop
+export default function Slide({ onButtonClick }) { 
+  const slides = [
+    {
+      image: "/img/carousel-3.jpg",
+      heading: "File Your Trademark Online",
+      subheading: "Official USPTO Registration Process",
+      description: "Protect Your Brand Today. Already know your Trademark is available?",
+    },
+    {
+      image: "/img/carousel-2.jpg",
+      heading: "Trademark Monitoring Service",
+      subheading: "Protect Your Trademark from Infringements",
+      description: "Get notified of any potential infringements and take action immediately.",
+    },
+    {
+      image: "/img/carousel-4.jpg",
+      heading: "Cease & Desist Services",
+      subheading: "Safeguard Your Brand Effectively",
+      description: "We help you handle cease & desist letters to protect your brand legally.",
+    }
+  ];
+
   return (
     <>
       <div
@@ -13,10 +33,15 @@ export default function Slide({ onButtonClick }) { // Accepting the prop
         data-bs-touch="false"
       >
         <div className="carousel-inner">
-          {[...Array(3)].map((_, index) => (
+          {slides.map((slide, index) => (
             <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index}>
               <div className="owl-carousel-item position-relative">
-                <img className="img-fluid" src="/img/carousel-2.jpg" alt="" style={{ height: "500px", objectFit: "cover" }} />
+                <img
+                  className="img-fluid"
+                  src={slide.image}
+                  alt=""
+                  style={{ height: "500px", objectFit: "cover" }}
+                />
                 <div
                   className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
                   style={{ background: "rgba(24, 29, 56, .7)" }}
@@ -25,25 +50,24 @@ export default function Slide({ onButtonClick }) { // Accepting the prop
                     <div className="row justify-content-start">
                       <div className="col-sm-10 col-lg-8">
                         <h6 className="text-white text-uppercase mb-4 animated slideInDown">
-                          File Your Trademark Online
+                          {slide.heading}
                         </h6>
                         <h1 className="display-4 text-white animated slideInDown">
-                          Official USPTO Registration Process
+                          {slide.subheading}
                         </h1>
                         <p className="fs-5 text-white mb-4 pb-2">
-                          Protect Your Brand Today. Already know your Trademark is available?
+                          {slide.description}
                         </p>
-                       
+
                         <FormButton
-                        to="/about"
+                          to="/about"
                           onClick={onButtonClick}
-                          name={'Read More'}
-                        sx={ {margin: '10px'} } 
+                          name="Read More"
+                          sx={{ margin: '10px' }}
                         />
                         <FormButton
                           onClick={onButtonClick}
-                          sx={ {margin: '10px'} } 
-                        // cssClass={ height: 'auto', width: 'auto' } 
+                          sx={{ margin: '10px' }}
                         />
                       </div>
                     </div>
@@ -60,10 +84,7 @@ export default function Slide({ onButtonClick }) { // Accepting the prop
           data-bs-target="#carouselExampleControlsNoTouching"
           data-bs-slide="prev"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
@@ -72,10 +93,7 @@ export default function Slide({ onButtonClick }) { // Accepting the prop
           data-bs-target="#carouselExampleControlsNoTouching"
           data-bs-slide="next"
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
