@@ -31,10 +31,11 @@ export default function Footer() {
                 <i className="fa fa-phone-alt me-3" />
                 +000 000 000 0000
               </p>
-              <p className="mb-2">
-                <i className="fa fa-envelope me-3" />
-               info@upstotrademarkrevive.com
-              </p>
+              <p className="mb-2" style={{ display: 'flex', alignItems: 'center' }}>
+  <i className="fa fa-envelope" style={{ marginRight: '1.5rem' }} />
+  info@upstotrademarkrevive.com
+</p>
+
 
             </div>
             <div className="col-lg-3 col-md-6">
