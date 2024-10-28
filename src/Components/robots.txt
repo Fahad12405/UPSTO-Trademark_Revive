@@ -1,13 +1,8 @@
-# robots.txt for https://usptotrademarkrevive.com/
+# robots.txt for https://usptotrademarkrevive.vercel.app/
 
 # Allow all user agents to access all areas of the site
 User-agent: *
 Disallow:
 
-# Uncomment the following lines to disallow specific directories
-# Disallow: /private/
-# Disallow: /temp/
-# Disallow: /cgi-bin/
-
 # Sitemap URL
-Sitemap: https://usptotrademarkrevive.com/sitemap.xml
+Sitemap: https://usptotrademarkrevive.vercel.app/sitemap.xml

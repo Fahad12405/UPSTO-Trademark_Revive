@@ -3,26 +3,29 @@ import "../../assets/css/Slide.css";
 import { Link } from "react-router-dom";
 import FormButton from "./FormButton";
 
-export default function Slide({ onButtonClick }) { 
+export default function Slide({ onButtonClick }) {
   const slides = [
     {
       image: "/img/carousel-3.jpg",
       heading: "File Your Trademark Online",
       subheading: "Official USPTO Registration Process",
-      description: "Protect Your Brand Today. Already know your Trademark is available?",
+      description:
+        "Protect Your Brand Today. Already know your Trademark is available?",
     },
     {
       image: "/img/carousel-2.jpg",
       heading: "Trademark Monitoring Service",
       subheading: "Protect Your Trademark from Infringements",
-      description: "Get notified of any potential infringements and take action immediately.",
+      description:
+        "Get notified of any potential infringements and take action immediately.",
     },
     {
       image: "/img/carousel-4.jpg",
       heading: "Cease & Desist Services",
       subheading: "Safeguard Your Brand Effectively",
-      description: "We help you handle cease & desist letters to protect your brand legally.",
-    }
+      description:
+        "We help you handle cease & desist letters to protect your brand legally.",
+    },
   ];
 
   return (
@@ -34,7 +37,10 @@ export default function Slide({ onButtonClick }) {
       >
         <div className="carousel-inner">
           {slides.map((slide, index) => (
-            <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index}>
+            <div
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+              key={index}
+            >
               <div className="owl-carousel-item position-relative">
                 <img
                   className="img-fluid"
@@ -58,16 +64,16 @@ export default function Slide({ onButtonClick }) {
                         <p className="fs-5 text-white mb-4 pb-2">
                           {slide.description}
                         </p>
-
                         <FormButton
                           to="/about"
                           onClick={onButtonClick}
-                          name="Read More"
-                          sx={{ margin: '10px' }}
+                          name="Learn More About Our Trademark Services"
+                          sx={{ margin: "10px" }}
                         />
+
                         <FormButton
                           onClick={onButtonClick}
-                          sx={{ margin: '10px' }}
+                          sx={{ margin: "10px" }}
                         />
                       </div>
                     </div>
@@ -84,7 +90,10 @@ export default function Slide({ onButtonClick }) {
           data-bs-target="#carouselExampleControlsNoTouching"
           data-bs-slide="prev"
         >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
@@ -93,7 +102,10 @@ export default function Slide({ onButtonClick }) {
           data-bs-target="#carouselExampleControlsNoTouching"
           data-bs-slide="next"
         >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
