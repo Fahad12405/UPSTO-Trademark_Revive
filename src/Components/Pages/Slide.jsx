@@ -11,6 +11,7 @@ export default function Slide({ onButtonClick }) {
       subheading: "Official USPTO Registration Process",
       description: "Protect Your Brand Today. Already know your Trademark is available?",
     },
+    
     {
       image: "/img/carousel-2-small.jpg", // Default for smaller screens
       srcSet: "/img/carousel-2-small.jpg 480w, /img/carousel-2-medium.jpg 800w, /img/carousel-2-large.jpg 1200w",

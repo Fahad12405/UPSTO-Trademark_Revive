@@ -47,7 +47,7 @@ const Category = () => {
           {/* Row 2 */}
           <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s">
             <Link className="position-relative d-block overflow-hidden" to="/trademark-declarations">
-              <img className="img-fluid" src="/img/category4.webp" alt="" />
+              <img className="img-fluid" src="/img/category4.jpg" alt="" />
               <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
                 <h5 className="m-0">Trademark Declarations</h5>
                 <p className="m-0">File your Declarations of Continued Use on time.</p>
@@ -57,7 +57,7 @@ const Category = () => {
 
           <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
             <Link className="position-relative d-block overflow-hidden" to="/trademark-genius">
-              <img className="img-fluid" src="/img/category5.webp" alt="" />
+              <img className="img-fluid" src="/img/category5.jpg" alt="" />
               <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
                 <h5 className="m-0">Trademark Revive</h5>
                 <p className="m-0">Utilize our services for seamless trademark management.</p>
