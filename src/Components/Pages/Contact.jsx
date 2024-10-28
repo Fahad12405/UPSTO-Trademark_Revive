@@ -1,6 +1,10 @@
   import React, { useState } from "react";
   import emailjs from "emailjs-com";
   import Swal from "sweetalert2"; // Import SweetAlert2
+  import "../../assets/lib/animate/animate.css";
+  import "../../assets/lib/animate/animate.min.css";
+
+
 
 
 
