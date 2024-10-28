@@ -33,7 +33,7 @@ export default function Footer() {
               </p>
               <p className="mb-2">
                 <i className="fa fa-envelope me-3" />
-                trademarkrevive@gmail.com
+               info@upstotrademarkrevive.com
               </p>
 
             </div>
