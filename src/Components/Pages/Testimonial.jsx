@@ -97,7 +97,7 @@ export default function Testimonial() {
 
               <div className="carousel-item text-center">
                 <img
-                  src="/img/testimonial-4.jpg"
+                  src="/img/team-2.jpg"
                   className="d-block border rounded-circle p-2 mx-auto mb-3"
                   alt="Sarah N"
                   style={{ width: "80px", minHeight: "80px" }}
