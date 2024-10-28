@@ -5,22 +5,22 @@ import FormButton from "./FormButton";
 export default function Slide({ onButtonClick }) {
   const slides = [
     {
-      image: "/img/carousel-3-small.jpg",
-      srcSet: "/img/carousel-3-small.jpg 480w, /img/carousel-3-medium.jpg 800w, /img/carousel-3-large.jpg 1200w",
+      image: "/img/carousel-3-small.webp", // Updated to WebP format for better performance
+      srcSet: "/img/carousel-3-small.webp 480w, /img/carousel-3-medium.webp 800w, /img/carousel-3-large.webp 1200w",
       heading: "File Your Trademark Online",
       subheading: "Official USPTO Registration Process",
       description: "Protect Your Brand Today. Already know your Trademark is available?",
     },
     {
-      image: "/img/carousel-2-small.jpg",
-      srcSet: "/img/carousel-2-small.jpg 480w, /img/carousel-2-medium.jpg 800w, /img/carousel-2-large.jpg 1200w",
+      image: "/img/carousel-2-small.webp", // Updated to WebP format for better performance
+      srcSet: "/img/carousel-2-small.webp 480w, /img/carousel-2-medium.webp 800w, /img/carousel-2-large.webp 1200w",
       heading: "Trademark Monitoring Service",
       subheading: "Protect Your Trademark from Infringements",
       description: "Get notified of any potential infringements and take action immediately.",
     },
     {
-      image: "/img/carousel-4-small.jpg",
-      srcSet: "/img/carousel-4-small.jpg 480w, /img/carousel-4-medium.jpg 800w, /img/carousel-4-large.jpg 1200w",
+      image: "/img/carousel-4-small.webp", // Updated to WebP format for better performance
+      srcSet: "/img/carousel-4-small.webp 480w, /img/carousel-4-medium.webp 800w, /img/carousel-4-large.webp 1200w",
       heading: "Cease & Desist Services",
       subheading: "Safeguard Your Brand Effectively",
       description: "We help you handle cease & desist letters to protect your brand legally.",
@@ -40,15 +40,16 @@ export default function Slide({ onButtonClick }) {
             key={index}
           >
             <div className="owl-carousel-item position-relative">
-              <img
-                className="img-fluid"
-                src={slide.image}
-                srcSet={slide.srcSet}
-                sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw"
-                alt={slide.heading}
-                loading="lazy" // Lazy loading
-                style={{ height: "auto", maxHeight: "500px", objectFit: "cover" }} // Set maxHeight for better responsiveness
-              />
+              <picture>
+                <source srcSet={slide.srcSet} type="image/webp" />
+                <img
+                  className="img-fluid"
+                  src={slide.image}
+                  alt={slide.heading} // Meaningful alt text for SEO
+                  loading="lazy" // Enable lazy loading for better performance
+                  style={{ height: "500px", objectFit: "cover" }}
+                />
+              </picture>
               <div
                 className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
                 style={{ background: "rgba(24, 29, 56, .7)" }}
@@ -89,7 +90,6 @@ export default function Slide({ onButtonClick }) {
         type="button"
         data-bs-target="#carouselExampleControlsNoTouching"
         data-bs-slide="prev"
-        aria-label="Previous Slide"
       >
         <span
           className="carousel-control-prev-icon"
@@ -102,7 +102,6 @@ export default function Slide({ onButtonClick }) {
         type="button"
         data-bs-target="#carouselExampleControlsNoTouching"
         data-bs-slide="next"
-        aria-label="Next Slide"
       >
         <span
           className="carousel-control-next-icon"
