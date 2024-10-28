@@ -113,16 +113,17 @@ export default function Footer() {
         <div className="container">
           <div className="copyright">
             <div className="row">
-              <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                ©{" "}
-                <a className="border-bottom" href>
-                  TRADEMARK REVIVE  &nbsp;
-                </a>
-                All Right Reserved.
+            <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
+  ©{" "}
+  <a className="border-bottom" href="https://usptotrademarkrevive.com" target="_blank" rel="noopener noreferrer">
+    TRADEMARK REVIVE &nbsp;
+  </a>
+  All Rights Reserved.
+  <br />
+  <br />
+</div>
 
-                <br />
-                <br />
-              </div>
+
               <div className="col-md-6 text-center text-md-end">
                 <div className="footer-menu">
                   <Link to="/Home">Home</Link>

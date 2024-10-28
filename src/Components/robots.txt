@@ -2,9 +2,9 @@
 
 # Allow all user agents to access all areas of the site
 User-agent: *
-Disallow: 
+Disallow:
 
-# If you have specific directories to block, you can uncomment the following lines
+# Uncomment the following lines to disallow specific directories
 # Disallow: /private/
 # Disallow: /temp/
 # Disallow: /cgi-bin/

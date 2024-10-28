@@ -239,7 +239,7 @@ const basicQuestionsFaqData = [
   <p style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.9", paddingTop: "30px" }}>
     The information provided in the Frequently Asked Questions (FAQ) section of this website is for general informational purposes only. While we strive to ensure that the content is accurate and up-to-date, we do not provide legal advice or act as a law firm. 
     Trademark laws are complex, and registration requirements may vary depending on your specific situation. It is important to consult with a qualified attorney or trademark professional to understand your rights and obligations fully.
-    Additionally, the information may not cover all scenarios, and there may be specific nuances in your case that require personalized legal attention. Therefore, relying solely on the information provided here is not advisable for making any legal decisions.<a href="https://www.uspto.gov/trademarks/basics/trademark-process" target="_blank" rel="noopener noreferrer" style={{ color: "#007BFF", textDecoration: "underline" }}>read more..</a>.
+    Additionally, the information may not cover all scenarios, and there may be specific nuances in your case that require personalized legal attention. Therefore, relying solely on the information provided here is not advisable for making any legal decisions.
   </p>
  
 </div>
