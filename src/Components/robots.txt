@@ -1,0 +1,13 @@
+# robots.txt for https://usptotrademarkrevive.com/
+
+# Allow all user agents to access all areas of the site
+User-agent: *
+Disallow: 
+
+# If you have specific directories to block, you can uncomment the following lines
+# Disallow: /private/
+# Disallow: /temp/
+# Disallow: /cgi-bin/
+
+# Sitemap URL
+Sitemap: https://usptotrademarkrevive.com/sitemap.xml
