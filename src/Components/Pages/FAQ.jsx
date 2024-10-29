@@ -223,11 +223,11 @@ const basicQuestionsFaqData = [
 
 
   return (
-    <div className="container-xxl py-5" style={{ backgroundColor: "#f9f9f9", marginTop: "70px " }}>
+    <div className="container-xxl py-5" style={{ backgroundColor: "#fffff", marginTop: "70px " }}>
       <div className="container">
         {/* FAQ Header */}
         <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 className="section-title bg-white text-center text-primary px-3" style={{ fontFamily: "Arial, sans-serif", fontWeight: "bold", padding: "10px 10px", margin: "30px", borderRadius: "5px", display: "inline-block" }}>
+          <h6 className="section-title bg-white text-center text-primary px-3" style={{ fontFamily: "Arial, sans-serif", fontWeight: "bold", padding: "20px 10px", margin: "30px", borderRadius: "5px", display: "inline-block" }}>
             Frequently Asked Questions
           </h6>
           <h1 className="mb-5" style={{ fontFamily: "Arial, sans-serif", fontSize: "36px", margin: "10px 0" }}>FAQs</h1>
