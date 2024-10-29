@@ -68,7 +68,7 @@ export default function Slide({ onButtonClick }) {
                         <FormButton
                           to="/about"
                           onClick={onButtonClick}
-                          name="Learn More About Our Trademark Services"
+                          name="Learn More About Our Trademark "
                           sx={{ margin: "10px" }}
                         />
 
