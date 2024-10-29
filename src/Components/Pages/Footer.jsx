@@ -65,14 +65,14 @@ export default function Footer() {
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light p-1"
-                    src="/img/category4.webp"
+                    src="/img/category4.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light p-1"
-                    src="/img/category5.webp"
+                    src="/img/category5.jpg"
                     alt=""
                   />
                 </div>
